@@ -8,16 +8,29 @@
 import SwiftUI
 
 struct WelcomeView: View {
-    
-//    let color: Constants.Colors = .grayLight
-    
+    @EnvironmentObject var critterData: CritterData
     var body: some View {
         VStack {
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-                
+            WelcomeViewHeader()
+            Spacer()
+            
+            if critterData.critters.isEmpty {
+                Image("Welcome-logo")
+                    .resizable()
+                    .scaledToFit()
+                    .padding(40.0)
+            } else {
+                List {
+                    ForEach(critterData.critters, id: \.name) { critter in
+                        Text("\(critter.name)")
+                    }
+                }
+            }
+            
+            Spacer()
+            
         }
         .background(Color("GrayLight"))
-        .frame(width: 200.0, height: 200.0)
     }
 }
 

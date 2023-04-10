@@ -22,17 +22,23 @@ struct WelcomeViewHeader: View {
                     Image(systemName: "plus.circle")
                         .resizable()
                         .frame(width: 35, height: 35)
+                        .foregroundColor(.black)
                 }
                 .accessibility(identifier: "addCritterButton")
-                //                .sheet(isPresented: $addCritterIsShowing){ OnBoardingView(onBoardViewIsShowing: $onBoardViewIsShowing)
-                //                }
+                .sheet(isPresented: $addCritterIsShowing) {
+                    VStack {
+                        Text("Hello")
+                    }
+                    .presentationDetents([.height(400)])
+                    .presentationBackground(.ultraThinMaterial)
+                }
             }
         }
         .overlay(
-            Image(systemName: "plus.circle")
+            Image("Logo-Header")
         )
-        .background(Color.white)
         .padding()
+        .background(Color.white)
     }
 }
 

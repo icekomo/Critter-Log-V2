@@ -8,18 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    let lightGrey: Constants.Colors = .grayLight
-    
+
+    @StateObject var critterData = CritterData()
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationStack {
+            ZStack {
+                Color.red
+                    .ignoresSafeArea()
+                
+                VStack(spacing: 0.0) {
+                    WelcomeView().environmentObject(critterData)
+                }
+                .padding()
+                .background(Constants.Colors.grayLight.color)
+            }
         }
-        .padding()
-        .background(Constants.Colors.grayLight.color)
     }
 }
 
