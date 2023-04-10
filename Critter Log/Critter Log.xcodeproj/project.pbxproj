@@ -14,6 +14,10 @@
 		E7347ACA29E3A483005240A1 /* Critter_LogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7347AC929E3A483005240A1 /* Critter_LogTests.swift */; };
 		E7347AD429E3A483005240A1 /* Critter_LogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7347AD329E3A483005240A1 /* Critter_LogUITests.swift */; };
 		E7347AD629E3A483005240A1 /* Critter_LogUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7347AD529E3A483005240A1 /* Critter_LogUITestsLaunchTests.swift */; };
+		E79A97EE29E4365D0099B9A6 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A97ED29E4365D0099B9A6 /* WelcomeView.swift */; };
+		E79A97F129E436950099B9A6 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A97F029E436950099B9A6 /* FileManager.swift */; };
+		E79A97F329E43E240099B9A6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A97F229E43E240099B9A6 /* Constants.swift */; };
+		E79A97F529E448730099B9A6 /* WelcomeViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A97F429E448730099B9A6 /* WelcomeViewHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		E7347ACF29E3A483005240A1 /* Critter LogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Critter LogUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7347AD329E3A483005240A1 /* Critter_LogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Critter_LogUITests.swift; sourceTree = "<group>"; };
 		E7347AD529E3A483005240A1 /* Critter_LogUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Critter_LogUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E79A97ED29E4365D0099B9A6 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		E79A97F029E436950099B9A6 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		E79A97F229E43E240099B9A6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E79A97F429E448730099B9A6 /* WelcomeViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +82,10 @@
 		E7347AAC29E3A482005240A1 = {
 			isa = PBXGroup;
 			children = (
+				E79A97EF29E436770099B9A6 /* Extensions */,
+				E79A97EB29E431600099B9A6 /* ViewModel */,
+				E79A97EA29E431550099B9A6 /* Models */,
+				E79A97E929E431440099B9A6 /* Views */,
 				E7347AB729E3A483005240A1 /* Critter Log */,
 				E7347AC829E3A483005240A1 /* Critter LogTests */,
 				E7347AD229E3A483005240A1 /* Critter LogUITests */,
@@ -125,6 +137,46 @@
 				E7347AD529E3A483005240A1 /* Critter_LogUITestsLaunchTests.swift */,
 			);
 			path = "Critter LogUITests";
+			sourceTree = "<group>";
+		};
+		E79A97E929E431440099B9A6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E79A97EC29E436490099B9A6 /* Welcome */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E79A97EA29E431550099B9A6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E79A97F229E43E240099B9A6 /* Constants.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E79A97EB29E431600099B9A6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E79A97EC29E436490099B9A6 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				E79A97ED29E4365D0099B9A6 /* WelcomeView.swift */,
+				E79A97F429E448730099B9A6 /* WelcomeViewHeader.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		E79A97EF29E436770099B9A6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E79A97F029E436950099B9A6 /* FileManager.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,8 +331,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E79A97F529E448730099B9A6 /* WelcomeViewHeader.swift in Sources */,
+				E79A97F329E43E240099B9A6 /* Constants.swift in Sources */,
 				E7347ABB29E3A483005240A1 /* ContentView.swift in Sources */,
+				E79A97EE29E4365D0099B9A6 /* WelcomeView.swift in Sources */,
 				E7347AB929E3A483005240A1 /* Critter_LogApp.swift in Sources */,
+				E79A97F129E436950099B9A6 /* FileManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

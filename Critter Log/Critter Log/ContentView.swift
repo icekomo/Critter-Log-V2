@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    let lightGrey: Constants.Colors = .grayLight
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -16,6 +19,7 @@ struct ContentView: View {
             Text("Hello, world!")
         }
         .padding()
+        .background(Constants.Colors.grayLight.color)
     }
 }
 
