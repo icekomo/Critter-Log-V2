@@ -11,6 +11,7 @@ struct WelcomeViewHeader: View {
     
     @State var addCritterIsShowing = false
     @State private var name = ""
+    @EnvironmentObject var critterData: CritterData
     
     var body: some View {
         ZStack {
@@ -36,7 +37,7 @@ struct WelcomeViewHeader: View {
 
                                 print(CritterData().critters)
                                 name = ""
-                                WelcomeViewModel().loadCritters()
+                                critterData.loadCritters()
                                 addCritterIsShowing.toggle()
                             }
                         }

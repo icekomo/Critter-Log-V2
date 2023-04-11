@@ -12,7 +12,7 @@ struct WelcomeView: View {
     
     var body: some View {
         VStack {
-            WelcomeViewHeader()
+            WelcomeViewHeader().environmentObject(critterData)
             Spacer()
             
             if critterData.critters.isEmpty {
@@ -34,7 +34,6 @@ struct WelcomeView: View {
         }
         .background(Color("GrayLight"))
         .onAppear {
-//            WelcomeViewModel().loadCritters()
             critterData.loadCritters()
         }
     }
