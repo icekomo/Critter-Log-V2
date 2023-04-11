@@ -22,17 +22,22 @@ struct WelcomeView: View {
                     .scaledToFit()
                     .padding(50.0)
             } else {
-                List {
-                    ForEach(critterData.critters, id: \.name) { critter in
-                        Text("\(critter.name)")
-                    }.onDelete(perform: critterData.delete)
+                
+                VStack(spacing: 0) {
+                    Text("Critters")
+                        .font(.largeTitle)
+                    List {
+                        ForEach(critterData.critters, id: \.name) { critter in
+                            Text("\(critter.name)")
+                        }.onDelete(perform: critterData.delete)
+                    }
                 }
             }
             
             Spacer()
             
         }
-        .background(Color("GrayLight"))
+        .background(Constants.Colors.grayLight.color)
         .onAppear {
             critterData.loadCritters()
         }
@@ -41,6 +46,8 @@ struct WelcomeView: View {
 
 struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
+        let critterData = CritterData()
         WelcomeView()
+            .environmentObject(critterData)
     }
 }

@@ -21,6 +21,7 @@
 		E79A97F729E459C90099B9A6 /* Critter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A97F629E459C90099B9A6 /* Critter.swift */; };
 		E79A97F929E45A050099B9A6 /* CritterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A97F829E45A050099B9A6 /* CritterData.swift */; };
 		E79A97FB29E4E7010099B9A6 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A97FA29E4E7010099B9A6 /* WelcomeViewModel.swift */; };
+		E79A97FD29E57F8B0099B9A6 /* AddCritterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A97FC29E57F8B0099B9A6 /* AddCritterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		E79A97F629E459C90099B9A6 /* Critter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Critter.swift; sourceTree = "<group>"; };
 		E79A97F829E45A050099B9A6 /* CritterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterData.swift; sourceTree = "<group>"; };
 		E79A97FA29E4E7010099B9A6 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
+		E79A97FC29E57F8B0099B9A6 /* AddCritterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCritterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 			children = (
 				E79A97ED29E4365D0099B9A6 /* WelcomeView.swift */,
 				E79A97F429E448730099B9A6 /* WelcomeViewHeader.swift */,
+				E79A97FC29E57F8B0099B9A6 /* AddCritterView.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E79A97FD29E57F8B0099B9A6 /* AddCritterView.swift in Sources */,
 				E79A97F529E448730099B9A6 /* WelcomeViewHeader.swift in Sources */,
 				E79A97FB29E4E7010099B9A6 /* WelcomeViewModel.swift in Sources */,
 				E79A97F329E43E240099B9A6 /* Constants.swift in Sources */,
