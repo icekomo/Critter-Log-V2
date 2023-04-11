@@ -14,14 +14,14 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.red
+                Color.white
                     .ignoresSafeArea()
                 
                 VStack(spacing: 0.0) {
                     WelcomeView().environmentObject(critterData)
                 }
-                .padding()
                 .background(Constants.Colors.grayLight.color)
+
             }
         }
     }

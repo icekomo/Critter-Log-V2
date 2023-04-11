@@ -20,6 +20,7 @@
 		E79A97F529E448730099B9A6 /* WelcomeViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A97F429E448730099B9A6 /* WelcomeViewHeader.swift */; };
 		E79A97F729E459C90099B9A6 /* Critter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A97F629E459C90099B9A6 /* Critter.swift */; };
 		E79A97F929E45A050099B9A6 /* CritterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A97F829E45A050099B9A6 /* CritterData.swift */; };
+		E79A97FB29E4E7010099B9A6 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A97FA29E4E7010099B9A6 /* WelcomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		E79A97F429E448730099B9A6 /* WelcomeViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewHeader.swift; sourceTree = "<group>"; };
 		E79A97F629E459C90099B9A6 /* Critter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Critter.swift; sourceTree = "<group>"; };
 		E79A97F829E45A050099B9A6 /* CritterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterData.swift; sourceTree = "<group>"; };
+		E79A97FA29E4E7010099B9A6 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 				E79A97F229E43E240099B9A6 /* Constants.swift */,
 				E79A97F629E459C90099B9A6 /* Critter.swift */,
 				E79A97F829E45A050099B9A6 /* CritterData.swift */,
+				E79A97FA29E4E7010099B9A6 /* WelcomeViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E79A97F529E448730099B9A6 /* WelcomeViewHeader.swift in Sources */,
+				E79A97FB29E4E7010099B9A6 /* WelcomeViewModel.swift in Sources */,
 				E79A97F329E43E240099B9A6 /* Constants.swift in Sources */,
 				E7347ABB29E3A483005240A1 /* ContentView.swift in Sources */,
 				E79A97F929E45A050099B9A6 /* CritterData.swift in Sources */,

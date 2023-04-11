@@ -10,6 +10,7 @@ import SwiftUI
 struct WelcomeViewHeader: View {
     
     @State var addCritterIsShowing = false
+    @State private var name = ""
     
     var body: some View {
         ZStack {
@@ -27,9 +28,20 @@ struct WelcomeViewHeader: View {
                 .accessibility(identifier: "addCritterButton")
                 .sheet(isPresented: $addCritterIsShowing) {
                     VStack {
-                        Text("Hello")
+                        Form {
+                            TextField("Name", text: $name)
+                            
+                            Button("Add Pet") {
+                                CritterData().addCritter(name: name)
+
+                                print(CritterData().critters)
+                                name = ""
+                                WelcomeViewModel().loadCritters()
+                                addCritterIsShowing.toggle()
+                            }
+                        }
                     }
-                    .presentationDetents([.height(400)])
+                    .presentationDetents([.height(200)])
                     .presentationBackground(.ultraThinMaterial)
                 }
             }

@@ -9,21 +9,23 @@ import SwiftUI
 
 struct WelcomeView: View {
     @EnvironmentObject var critterData: CritterData
+    
     var body: some View {
         VStack {
             WelcomeViewHeader()
             Spacer()
             
             if critterData.critters.isEmpty {
+                
                 Image("Welcome-logo")
                     .resizable()
                     .scaledToFit()
-                    .padding(40.0)
+                    .padding(50.0)
             } else {
                 List {
                     ForEach(critterData.critters, id: \.name) { critter in
                         Text("\(critter.name)")
-                    }
+                    }.onDelete(perform: critterData.delete)
                 }
             }
             
@@ -31,6 +33,10 @@ struct WelcomeView: View {
             
         }
         .background(Color("GrayLight"))
+        .onAppear {
+//            WelcomeViewModel().loadCritters()
+            critterData.loadCritters()
+        }
     }
 }
 

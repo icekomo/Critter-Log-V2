@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct Critter: Codable{
+struct Critter: Codable {
     
     var name: String
     
