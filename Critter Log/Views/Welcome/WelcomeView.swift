@@ -28,9 +28,15 @@ struct WelcomeView: View {
                         .font(.largeTitle)
                     List {
                         ForEach(critterData.critters, id: \.name) { critter in
-                            Text("\(critter.name)")
-                        }.onDelete(perform: critterData.delete)
+                            CritterCellView(critterName: critter.name)
+                        }
+                        .onDelete(perform: critterData.delete)
+                        .listRowInsets(EdgeInsets(top:0, leading:0, bottom:-5, trailing: 0))
+                        .listRowSeparator(.hidden)
+                        .padding(.vertical, -5)
+                        .background(Constants.Colors.grayLight.color)
                     }
+                    .listStyle(PlainListStyle())
                 }
             }
             

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E731DC9029E5F1F600F15C3A /* CritterCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E731DC8F29E5F1F600F15C3A /* CritterCellView.swift */; };
 		E7347AB929E3A483005240A1 /* Critter_LogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7347AB829E3A483005240A1 /* Critter_LogApp.swift */; };
 		E7347ABB29E3A483005240A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7347ABA29E3A483005240A1 /* ContentView.swift */; };
 		E7347ABD29E3A483005240A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7347ABC29E3A483005240A1 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E731DC8F29E5F1F600F15C3A /* CritterCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterCellView.swift; sourceTree = "<group>"; };
 		E7347AB529E3A483005240A1 /* Critter Log.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Critter Log.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7347AB829E3A483005240A1 /* Critter_LogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Critter_LogApp.swift; sourceTree = "<group>"; };
 		E7347ABA29E3A483005240A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				E79A97ED29E4365D0099B9A6 /* WelcomeView.swift */,
 				E79A97F429E448730099B9A6 /* WelcomeViewHeader.swift */,
 				E79A97FC29E57F8B0099B9A6 /* AddCritterView.swift */,
+				E731DC8F29E5F1F600F15C3A /* CritterCellView.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				E79A97FD29E57F8B0099B9A6 /* AddCritterView.swift in Sources */,
 				E79A97F529E448730099B9A6 /* WelcomeViewHeader.swift in Sources */,
 				E79A97FB29E4E7010099B9A6 /* WelcomeViewModel.swift in Sources */,
+				E731DC9029E5F1F600F15C3A /* CritterCellView.swift in Sources */,
 				E79A97F329E43E240099B9A6 /* Constants.swift in Sources */,
 				E7347ABB29E3A483005240A1 /* ContentView.swift in Sources */,
 				E79A97F929E45A050099B9A6 /* CritterData.swift in Sources */,

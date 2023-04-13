@@ -26,14 +26,21 @@ struct AddCritterView: View {
                 TextField("Name", text: $name)
                     .padding()
                     .background(Constants.Colors.grayLight.color)
+                    .onTapGesture {
+                        name = ""
+                    }
                 
                 Button("Add Critter") {
-                    CritterData().addCritter(name: name)
                     
-                    print(CritterData().critters)
-                    name = ""
-                    critterData.loadCritters()
-                    addCritterIsShowing.toggle()
+                    if name.isEmpty || name == "Please add a name" {
+                        name = "Please add a name"
+                    } else {
+                        CritterData().addCritter(name: name)
+                        print(CritterData().critters)
+                        name = ""
+                        critterData.loadCritters()
+                        addCritterIsShowing.toggle()
+                    }
                 }
                 .padding()
                 .background(Constants.Colors.brownDark.color)
