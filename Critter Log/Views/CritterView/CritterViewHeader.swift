@@ -7,20 +7,22 @@
 
 import SwiftUI
 
-struct WelcomeViewHeader: View {
+struct CritterViewHeader: View {
     
     @State var addCritterIsShowing = false
    
-    @EnvironmentObject var critterData: CritterData
+    @EnvironmentObject var critterViewModel: CritterViewModel
+    
+    var addCritterViewModel = AddCritterViewModel()
     
     var body: some View {
         ZStack {
             HStack {
                 Spacer()
-                Button(action: {
+                Button {
                     addCritterIsShowing = true
                     print("buton tapped")
-                }) {
+                } label: {
                     Image(systemName: "plus.circle")
                         .resizable()
                         .frame(width: 35, height: 35)
@@ -28,21 +30,9 @@ struct WelcomeViewHeader: View {
                 }
                 .accessibility(identifier: "addCritterButton")
                 .sheet(isPresented: $addCritterIsShowing) {
-//                    VStack {
-//                        Form {
-//                            TextField("Name", text: $name)
-//
-//                        }
-//                        Button("Add Pet") {
-//                            CritterData().addCritter(name: name)
-//
-//                            print(CritterData().critters)
-//                            name = ""
-//                            critterData.loadCritters()
-//                            addCritterIsShowing.toggle()
-//                        }
-//                    }
-                    AddCritterView(addCritterIsShowing: $addCritterIsShowing).environmentObject(critterData)
+
+                    AddCritterView(addCritterViewModel: addCritterViewModel,
+                                   addCritterIsShowing: $addCritterIsShowing).environmentObject(critterViewModel)
                     .presentationDetents([.height(200)])
                     .presentationBackground(.ultraThinMaterial)
                 }
@@ -58,6 +48,6 @@ struct WelcomeViewHeader: View {
 
 struct WelcomeViewHeader_Previews: PreviewProvider {
     static var previews: some View {
-        WelcomeViewHeader()
+        CritterViewHeader()
     }
 }

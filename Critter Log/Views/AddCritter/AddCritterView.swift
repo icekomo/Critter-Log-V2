@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct AddCritterView: View {
-    @EnvironmentObject var critterData: CritterData
+    
+    var addCritterViewModel: AddCritterViewModel
+    
+    @StateObject var critterViewModel = CritterViewModel()
     
     @State private var name = ""
     
@@ -35,11 +38,14 @@ struct AddCritterView: View {
                     if name.isEmpty || name == "Please add a name" {
                         name = "Please add a name"
                     } else {
-                        CritterData().addCritter(name: name)
-                        print(CritterData().critters)
+                        addCritterViewModel.addCritter(name: name)
+                        print(critterViewModel.critters.count)
+                        // add random image to critter
                         name = ""
-                        critterData.loadCritters()
+                        
                         addCritterIsShowing.toggle()
+                        
+                        critterViewModel.loadCritters()
                     }
                 }
                 .padding()
@@ -55,7 +61,10 @@ struct AddCritterView: View {
 struct AddCritterView_Previews: PreviewProvider {
     
     static private  var addCritterIsShowing = Binding.constant(false)
+    
+    static private var addCritterViewModel = AddCritterViewModel()
+    
     static var previews: some View {
-        AddCritterView(addCritterIsShowing: addCritterIsShowing)
+        AddCritterView(addCritterViewModel: addCritterViewModel, addCritterIsShowing: addCritterIsShowing)
     }
 }

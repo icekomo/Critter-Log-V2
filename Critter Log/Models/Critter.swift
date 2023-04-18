@@ -7,9 +7,10 @@
 
 import Foundation
 import SwiftUI
+import UIKit
 
-struct Critter: Codable {
-    
+struct Critter: Identifiable, Codable {
+    let id = UUID()
     var name: String
-    
+//    var critterURL: String?
 }

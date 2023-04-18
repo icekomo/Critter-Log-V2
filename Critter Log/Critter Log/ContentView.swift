@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @StateObject var critterData = CritterData()
-
+    @StateObject var critterViewModel = CritterViewModel()
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -18,7 +18,7 @@ struct ContentView: View {
                     .ignoresSafeArea()
                 
                 VStack(spacing: 0.0) {
-                    WelcomeView().environmentObject(critterData)
+                    CritterView().environmentObject(critterViewModel)
                 }
                 .background(Constants.Colors.grayLight.color)
 

@@ -7,15 +7,16 @@
 
 import SwiftUI
 
-struct WelcomeView: View {
-    @EnvironmentObject var critterData: CritterData
+struct CritterView: View {
+
+    @EnvironmentObject var critterViewModel: CritterViewModel
     
     var body: some View {
         VStack {
-            WelcomeViewHeader().environmentObject(critterData)
+            CritterViewHeader().environmentObject(critterViewModel)
             Spacer()
             
-            if critterData.critters.isEmpty {
+            if critterViewModel.critters.isEmpty {
                 
                 Image("Welcome-logo")
                     .resizable()
@@ -27,11 +28,11 @@ struct WelcomeView: View {
                     Text("Critters")
                         .font(.largeTitle)
                     List {
-                        ForEach(critterData.critters, id: \.name) { critter in
-                            CritterCellView(critterName: critter.name)
+                        ForEach(critterViewModel.critters, id: \.name) { critter in
+                            CritterCellView(critter: critter)
                         }
-                        .onDelete(perform: critterData.delete)
-                        .listRowInsets(EdgeInsets(top:0, leading:0, bottom:-5, trailing: 0))
+                        .onDelete(perform: critterViewModel.delete)
+                        .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: -5, trailing: 0))
                         .listRowSeparator(.hidden)
                         .padding(.vertical, -5)
                         .background(Constants.Colors.grayLight.color)
@@ -45,15 +46,15 @@ struct WelcomeView: View {
         }
         .background(Constants.Colors.grayLight.color)
         .onAppear {
-            critterData.loadCritters()
+            critterViewModel.loadCritters()
         }
     }
 }
 
 struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
-        let critterData = CritterData()
-        WelcomeView()
-            .environmentObject(critterData)
+        let critterViewModel = CritterViewModel()
+        CritterView()
+            .environmentObject(critterViewModel)
     }
 }
