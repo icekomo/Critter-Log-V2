@@ -11,6 +11,11 @@
 		E731DCA329ECC5FE00F15C3A /* CritterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E731DCA229ECC5FE00F15C3A /* CritterViewModel.swift */; };
 		E731DCA529ECC69D00F15C3A /* CritterImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E731DCA429ECC69D00F15C3A /* CritterImage.swift */; };
 		E731DCAC29EE21B400F15C3A /* AddCritterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E731DCAB29EE21B400F15C3A /* AddCritterViewModel.swift */; };
+		E731DCAF29F01F4500F15C3A /* CritterDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E731DCAE29F01F4500F15C3A /* CritterDetailsView.swift */; };
+		E731DCB129F027F700F15C3A /* CritterTaskTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = E731DCB029F027F700F15C3A /* CritterTaskTab.swift */; };
+		E731DCB329F0281000F15C3A /* CritterOptionsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = E731DCB229F0281000F15C3A /* CritterOptionsTab.swift */; };
+		E731DCB529F0289600F15C3A /* CritterDetailTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = E731DCB429F0289600F15C3A /* CritterDetailTab.swift */; };
+		E731DCB829F042BF00F15C3A /* AgeOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E731DCB729F042BF00F15C3A /* AgeOptionView.swift */; };
 		E7347AB929E3A483005240A1 /* Critter_LogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7347AB829E3A483005240A1 /* Critter_LogApp.swift */; };
 		E7347ABB29E3A483005240A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7347ABA29E3A483005240A1 /* ContentView.swift */; };
 		E7347ABD29E3A483005240A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7347ABC29E3A483005240A1 /* Assets.xcassets */; };
@@ -49,6 +54,11 @@
 		E731DCA229ECC5FE00F15C3A /* CritterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterViewModel.swift; sourceTree = "<group>"; };
 		E731DCA429ECC69D00F15C3A /* CritterImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterImage.swift; sourceTree = "<group>"; };
 		E731DCAB29EE21B400F15C3A /* AddCritterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCritterViewModel.swift; sourceTree = "<group>"; };
+		E731DCAE29F01F4500F15C3A /* CritterDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterDetailsView.swift; sourceTree = "<group>"; };
+		E731DCB029F027F700F15C3A /* CritterTaskTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterTaskTab.swift; sourceTree = "<group>"; };
+		E731DCB229F0281000F15C3A /* CritterOptionsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterOptionsTab.swift; sourceTree = "<group>"; };
+		E731DCB429F0289600F15C3A /* CritterDetailTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterDetailTab.swift; sourceTree = "<group>"; };
+		E731DCB729F042BF00F15C3A /* AgeOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeOptionView.swift; sourceTree = "<group>"; };
 		E7347AB529E3A483005240A1 /* Critter Log.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Critter Log.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7347AB829E3A483005240A1 /* Critter_LogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Critter_LogApp.swift; sourceTree = "<group>"; };
 		E7347ABA29E3A483005240A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -99,6 +109,26 @@
 				E79A97FC29E57F8B0099B9A6 /* AddCritterView.swift */,
 			);
 			path = AddCritter;
+			sourceTree = "<group>";
+		};
+		E731DCAD29F01C5B00F15C3A /* CritterDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				E731DCB629F042AE00F15C3A /* OptionViews */,
+				E731DCAE29F01F4500F15C3A /* CritterDetailsView.swift */,
+				E731DCB029F027F700F15C3A /* CritterTaskTab.swift */,
+				E731DCB229F0281000F15C3A /* CritterOptionsTab.swift */,
+				E731DCB429F0289600F15C3A /* CritterDetailTab.swift */,
+			);
+			path = CritterDetailView;
+			sourceTree = "<group>";
+		};
+		E731DCB629F042AE00F15C3A /* OptionViews */ = {
+			isa = PBXGroup;
+			children = (
+				E731DCB729F042BF00F15C3A /* AgeOptionView.swift */,
+			);
+			path = OptionViews;
 			sourceTree = "<group>";
 		};
 		E7347AAC29E3A482005240A1 = {
@@ -164,6 +194,7 @@
 		E79A97E929E431440099B9A6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E731DCAD29F01C5B00F15C3A /* CritterDetailView */,
 				E731DCAA29EE1E0800F15C3A /* AddCritter */,
 				E79A97EC29E436490099B9A6 /* CritterView */,
 			);
@@ -367,12 +398,17 @@
 				E731DCA329ECC5FE00F15C3A /* CritterViewModel.swift in Sources */,
 				E79A97F329E43E240099B9A6 /* Constants.swift in Sources */,
 				E7347ABB29E3A483005240A1 /* ContentView.swift in Sources */,
+				E731DCB329F0281000F15C3A /* CritterOptionsTab.swift in Sources */,
 				E731DCAC29EE21B400F15C3A /* AddCritterViewModel.swift in Sources */,
 				E79A97F929E45A050099B9A6 /* CritterData.swift in Sources */,
+				E731DCB829F042BF00F15C3A /* AgeOptionView.swift in Sources */,
+				E731DCAF29F01F4500F15C3A /* CritterDetailsView.swift in Sources */,
 				E79A97EE29E4365D0099B9A6 /* CritterView.swift in Sources */,
 				E79A97F729E459C90099B9A6 /* Critter.swift in Sources */,
+				E731DCB529F0289600F15C3A /* CritterDetailTab.swift in Sources */,
 				E7347AB929E3A483005240A1 /* Critter_LogApp.swift in Sources */,
 				E79A97F129E436950099B9A6 /* FileManager.swift in Sources */,
+				E731DCB129F027F700F15C3A /* CritterTaskTab.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

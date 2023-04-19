@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @StateObject var critterViewModel = CritterViewModel()
+    let critterViewModel = CritterViewModel()
     
     var body: some View {
         NavigationStack {

@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct AddCritterViewModel {
+class AddCritterViewModel: ObservableObject {
+    
+    @Published var critterImage: Critter?
 
     func addCritter(name: String) {
         // 1. Get the URL of our JSON file
@@ -25,7 +27,7 @@ struct AddCritterViewModel {
         }
         
         // 3. Create a new critter object with the given data and add it to the array
-        let newCritter = Critter(name: name)
+        let newCritter = Critter(name: name, url: "")
         critters.append(newCritter)
         
         // 4. Save the updated array back to the JSON file
@@ -38,4 +40,23 @@ struct AddCritterViewModel {
         
         print("\(critters.count) is the count")
     }
+    
+    func fetchCritterImage() {
+            guard let url = URL(string: "https://api.thecatapi.com/v1/images/search") else {
+                return
+            }
+            URLSession.shared.dataTask(with: url) { data, response, error in
+                if let data = data {
+                    let decoder = JSONDecoder()
+                    do {
+                        let critterImage = try decoder.decode([Critter].self, from: data).first
+                        DispatchQueue.main.async {
+                            self.critterImage = critterImage
+                        }
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                }
+            }.resume()
+        }
 }

@@ -22,6 +22,7 @@ class CritterViewModel: ObservableObject {
         print("load critters")
         if let fileUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("critters.json") {
             do {
+                print(fileUrl)
                 let data = try Data(contentsOf: fileUrl)
                 let decoder = JSONDecoder()
                 self.critters = try decoder.decode([Critter].self, from: data)
@@ -37,7 +38,7 @@ class CritterViewModel: ObservableObject {
     // Step 2: Create the Json file if needed
     func createNewFile() {
         let critters = [Critter]()
-
+        
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted
         
@@ -76,7 +77,7 @@ class CritterViewModel: ObservableObject {
         let apiKey = "live_4Yiy8D3sx9pvMiK276lStGhlfQt01bDOB19JHnJ8jTkrcJ9AkHAbfrH152IhzfXJ"
         let urlString = "https://api.thedogapi.com/v1/images/search?api_key=\(apiKey)"
         guard let url = URL(string: urlString) else { return }
-
+        
         URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data else { return }
             let decoder = JSONDecoder()
@@ -92,5 +93,26 @@ class CritterViewModel: ObservableObject {
                 print(error.localizedDescription)
             }
         }.resume()
+    }
+    
+    func updateAge(for critter: Critter, newAge: Int) {
+        
+        print("New age from fun \(newAge)")
+        guard let index = critters.firstIndex(where: { $0.id == critter.id }) else {
+            return // Pet not found in the array
+        }
+        
+        critters[index].age = newAge
+        
+        guard let url = Bundle.main.url(forResource: "critters", withExtension: "json") else {
+            fatalError("Failed to find pets.json in main bundle")
+        }
+        
+        do {
+            let data = try JSONEncoder().encode(critters)
+            try data.write(to: url)
+        } catch {
+            fatalError("Failed to encode or write pets.json: \(error)")
+        }
     }
 }

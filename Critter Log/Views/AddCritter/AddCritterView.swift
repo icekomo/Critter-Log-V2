@@ -11,10 +11,8 @@ struct AddCritterView: View {
     
     var addCritterViewModel: AddCritterViewModel
     
-    @StateObject var critterViewModel = CritterViewModel()
-    
+    @EnvironmentObject var critterViewModel: CritterViewModel
     @State private var name = ""
-    
     @Binding var addCritterIsShowing: Bool
     
     var body: some View {
@@ -42,10 +40,8 @@ struct AddCritterView: View {
                         print(critterViewModel.critters.count)
                         // add random image to critter
                         name = ""
-                        
-                        addCritterIsShowing.toggle()
-                        
                         critterViewModel.loadCritters()
+                        addCritterIsShowing.toggle()
                     }
                 }
                 .padding()

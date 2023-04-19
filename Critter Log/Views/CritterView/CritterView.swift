@@ -8,45 +8,57 @@
 import SwiftUI
 
 struct CritterView: View {
-
+    
     @EnvironmentObject var critterViewModel: CritterViewModel
     
     var body: some View {
-        VStack {
-            CritterViewHeader().environmentObject(critterViewModel)
-            Spacer()
-            
-            if critterViewModel.critters.isEmpty {
+        
+        NavigationStack {
+            VStack {
+                CritterViewHeader().environmentObject(critterViewModel)
+                Spacer()
                 
-                Image("Welcome-logo")
-                    .resizable()
-                    .scaledToFit()
-                    .padding(50.0)
-            } else {
-                
-                VStack(spacing: 0) {
-                    Text("Critters")
-                        .font(.largeTitle)
-                    List {
-                        ForEach(critterViewModel.critters, id: \.name) { critter in
-                            CritterCellView(critter: critter)
+                if critterViewModel.critters.isEmpty {
+                    
+                    Image("Welcome-logo")
+                        .resizable()
+                        .scaledToFit()
+                        .padding(50.0)
+                } else {
+                    
+                    VStack(spacing: 0) {
+                        Text("Critters")
+                            .font(.largeTitle)
+                        List {
+                            ForEach(critterViewModel.critters, id: \.name) { critter in
+                                
+                                ZStack(alignment: .leading) {
+                                    NavigationLink( destination: CritterDetailsView(critter: critter)) {
+                                        EmptyView()
+                                    }
+                                    .opacity(0)
+                                    CritterCellView(critter: critter)
+                                }
+                            }
+                            
+                            .onDelete(perform: critterViewModel.delete)
+                            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: -5, trailing: 0))
+                            .listRowSeparator(.hidden)
+                            .padding(.vertical, -5)
+                            .background(Constants.Colors.grayLight.color)
+    
                         }
-                        .onDelete(perform: critterViewModel.delete)
-                        .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: -5, trailing: 0))
-                        .listRowSeparator(.hidden)
-                        .padding(.vertical, -5)
-                        .background(Constants.Colors.grayLight.color)
+                        .listStyle(PlainListStyle())
                     }
-                    .listStyle(PlainListStyle())
                 }
+                
+                Spacer()
+                
             }
-            
-            Spacer()
-            
-        }
-        .background(Constants.Colors.grayLight.color)
-        .onAppear {
-            critterViewModel.loadCritters()
+            .background(Constants.Colors.grayLight.color)
+            .onAppear {
+                critterViewModel.loadCritters()
+            }
         }
     }
 }

@@ -12,5 +12,19 @@ import UIKit
 struct Critter: Identifiable, Codable {
     let id = UUID()
     var name: String
-//    var critterURL: String?
+    let url: String
+    var age: Int?
+    var tasks: [String]?
+    var contact: String?
+    var showContact: Bool = true
+    var emergencyContact: String?
+    var showEmergencyContact: Bool = true
+    
+static let exampleCritterData = [Critter(name: "Ziggy",
+                                         url: "www.google.com",
+                                         age: 6, tasks: nil,
+                                         contact: "215-888-9000",
+                                         showContact: true,
+                                         emergencyContact: "911",
+                                         showEmergencyContact: true)]
 }
