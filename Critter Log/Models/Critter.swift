@@ -14,6 +14,7 @@ struct Critter: Identifiable, Codable {
     var name: String
     let url: String
     var age: Int?
+    var showAge: Bool = true
     var tasks: [String]?
     var contact: String?
     var showContact: Bool = true

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CritterDetailsView: View {
     
+    @EnvironmentObject var critterViewModel: CritterViewModel
+    
     @AppStorage("CritterCurrentTab") var selectedTab = 1
     
     let critter: Critter
@@ -18,57 +20,35 @@ struct CritterDetailsView: View {
         TabView(selection: $selectedTab) {
             
             Group {
-                CritterDetailTab(critter: critter)
+                CritterDetailTab(critter: critter).environmentObject(critterViewModel)
                     .tabItem {
                         Image(systemName: "1.circle")
                         Text("Details")
                     }
                     .tag(1)
                 
-                CritterTaskTab(critter: critter)
+                CritterTaskTab(critter: critter).environmentObject(critterViewModel)
                     .tabItem {
                         Image(systemName: "list.bullet")
                         Text("Tasks")
                     }
                     .tag(2)
                 
-                CritterOptionsTab(critter: critter)
+                CritterOptionsTab(critter: critter).environmentObject(critterViewModel)
                     .tabItem {
                         Image(systemName: "option")
                         Text("Options")
                     }
                     .tag(3)
-                
-//                CritterDetailTab(critter: critter)
-//                    .tabItem {
-//                        Label("Critter", systemImage: "eyes.inverse")
-//                    }
-//                    .tag(1)
-//
-//                CritterTaskTab(critter: critter)
-//                    .tabItem {
-//                        Label("Critter", systemImage: "eyes.inverse")
-//                    }
-//                    .tag(2)
-//
-//                CritterOptionsTab(critter: critter)
-//                    .tabItem {
-//                        Image("doctor")
-//                            .resizable()
-//                            .scaledToFit()
-//                            .foregroundColor(.blue)
-//
-//                        Label("Doctor", systemImage: "house")
-//                    }
-//                    .badge(critter.vet != nil ? 1 : 0)
-//                    .tag(3)
             }
-            
         }
+        .background(Constants.Colors.grayLight.color)
     }
 }
 
 struct CritterDetailsView_Previews: PreviewProvider {
+    
+    @EnvironmentObject var critterViewModel: CritterViewModel
     
     static var previews: some View {
         CritterDetailsView(critter: Critter.exampleCritterData[0])

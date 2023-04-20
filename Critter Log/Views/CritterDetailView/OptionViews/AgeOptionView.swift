@@ -41,7 +41,7 @@ struct AgeOptionView: View {
                         let ageInt = Int(age) ?? 0
                         print("This is the new age \(ageInt)")
                         critterViewModel.updateAge(for: critter, newAge: ageInt)
-                        age = ""
+//                        age = ""
                         
                         ageOptionIsShowing.toggle()
                     }

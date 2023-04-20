@@ -33,7 +33,7 @@ struct CritterView: View {
                             ForEach(critterViewModel.critters, id: \.name) { critter in
                                 
                                 ZStack(alignment: .leading) {
-                                    NavigationLink( destination: CritterDetailsView(critter: critter)) {
+                                    NavigationLink( destination: CritterDetailsView(critter: critter).environmentObject(critterViewModel)) {
                                         EmptyView()
                                     }
                                     .opacity(0)

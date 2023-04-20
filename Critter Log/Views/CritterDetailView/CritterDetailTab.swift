@@ -8,10 +8,28 @@
 import SwiftUI
 
 struct CritterDetailTab: View {
+    @EnvironmentObject var critterViewModel: CritterViewModel
     let critter: Critter
     
     var body: some View {
-        AgeView(critter: critter)
+        ZStack {
+            VStack {
+                ImageView(critter: critter)
+                NameView(critter: critter)
+                HStack {
+                    if critter.showAge == false {
+                        AgeView(critter: critter).hidden()
+                    } else {
+                        AgeView(critter: critter)
+                    }
+                    
+                    ContactView(critter: critter)
+                }
+                
+                Spacer()
+            }
+        }
+        .background(Constants.Colors.grayLight.color)
     }
 }
 
@@ -21,16 +39,63 @@ struct CritterDetailTab_Previews: PreviewProvider {
     }
 }
 
+struct ImageView: View {
+    let critter: Critter
+    var body: some View {
+        Image("TestDog")
+            .resizable()
+    }
+}
+
+struct NameView: View {
+    let critter: Critter
+    var body: some View {
+        Text("\(critter.name)")
+           
+            .font(.system(size: 50))
+            .fontWeight(.heavy)
+            .foregroundColor(Color.black)
+            .padding(.bottom)
+    }
+}
 
 struct AgeView: View {
     let critter: Critter
     
     var body: some View {
-        if let showAge = critter.age {
-            Text("\(showAge)")
-        } else {
-            Text("no age to show")
+        ZStack {
+            if let showAge = critter.age {
+                VStack {
+                    Text("Age:")
+                        .fontWeight(.medium)
+                        .foregroundColor(Color.white)
+                    Text(String(showAge))
+                        .font(.largeTitle)
+                        .fontWeight(.black)
+                        .foregroundColor(Constants.Colors.brownLight.color)
+                }
+                .frame(width: 60, height: 60)
+                .padding()
+                .background(Color.black)
+                .cornerRadius(70)
+            } else {
+                Text("no age to show")
+            }
         }
+        .padding()
+        .background(Color.white)
         
+    }
+}
+
+struct ContactView: View {
+    let critter: Critter
+    
+    var body: some View {
+        ZStack {
+            Text("Contact")
+        }
+        .padding()
+        .background(Color.white)
     }
 }

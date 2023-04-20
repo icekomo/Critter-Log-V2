@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CritterTaskTab: View {
+    @EnvironmentObject var critterViewModel: CritterViewModel
+    
     let critter: Critter
     
     var body: some View {

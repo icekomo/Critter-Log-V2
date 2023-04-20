@@ -97,15 +97,45 @@ class CritterViewModel: ObservableObject {
     
     func updateAge(for critter: Critter, newAge: Int) {
         
-        print("New age from fun \(newAge)")
+//        print("Old age \(critter.age)")
+//        print("New age \(newAge)")
+//        print("this is the critter id \(critter.id)")
         guard let index = critters.firstIndex(where: { $0.id == critter.id }) else {
             return // Pet not found in the array
         }
         
         critters[index].age = newAge
+        saveUpdates()
         
-        guard let url = Bundle.main.url(forResource: "critters", withExtension: "json") else {
-            fatalError("Failed to find pets.json in main bundle")
+//        guard let url = FileManager.default.urls(for: .documentDirectory,
+//                                                 in: .userDomainMask).first?.appendingPathComponent("critters.json") else {
+//            fatalError("Failed to find critters.json in main bundle")
+//        }
+//
+//        do {
+//            let data = try JSONEncoder().encode(critters)
+//            try data.write(to: url)
+//        } catch {
+//            fatalError("Failed to encode or write pets.json: \(error)")
+//        }
+    }
+    
+    func displayAge(for critter: Critter, showAge: Bool) {
+        
+        print("this is the toggle value \(showAge)")
+        
+        guard let index = critters.firstIndex(where: { $0.id == critter.id }) else {
+            return // Pet not found in the array
+        }
+        
+        critters[index].showAge = showAge
+        saveUpdates()
+    }
+    
+    func saveUpdates() {
+        guard let url = FileManager.default.urls(for: .documentDirectory,
+                                                 in: .userDomainMask).first?.appendingPathComponent("critters.json") else {
+            fatalError("Failed to find critters.json in main bundle")
         }
         
         do {
