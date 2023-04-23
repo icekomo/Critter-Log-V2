@@ -21,6 +21,7 @@ struct Critter: Identifiable, Codable {
     var emergencyContact: String?
     var showEmergencyContact: Bool = true
     
+    
 static let exampleCritterData = [Critter(name: "Ziggy",
                                          url: "www.google.com",
                                          age: 6, tasks: nil,

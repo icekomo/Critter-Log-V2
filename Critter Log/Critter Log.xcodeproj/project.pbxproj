@@ -30,6 +30,7 @@
 		E79A97F729E459C90099B9A6 /* Critter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A97F629E459C90099B9A6 /* Critter.swift */; };
 		E79A97F929E45A050099B9A6 /* CritterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A97F829E45A050099B9A6 /* CritterData.swift */; };
 		E79A97FD29E57F8B0099B9A6 /* AddCritterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A97FC29E57F8B0099B9A6 /* AddCritterView.swift */; };
+		E7E8058A29F56706009C43A2 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E8058929F56706009C43A2 /* AddTaskView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		E79A97F629E459C90099B9A6 /* Critter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Critter.swift; sourceTree = "<group>"; };
 		E79A97F829E45A050099B9A6 /* CritterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterData.swift; sourceTree = "<group>"; };
 		E79A97FC29E57F8B0099B9A6 /* AddCritterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCritterView.swift; sourceTree = "<group>"; };
+		E7E8058929F56706009C43A2 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 		E731DCAD29F01C5B00F15C3A /* CritterDetailView */ = {
 			isa = PBXGroup;
 			children = (
+				E7E8058829F566E5009C43A2 /* TasksViews */,
 				E731DCB629F042AE00F15C3A /* OptionViews */,
 				E731DCAE29F01F4500F15C3A /* CritterDetailsView.swift */,
 				E731DCB029F027F700F15C3A /* CritterTaskTab.swift */,
@@ -237,6 +240,14 @@
 				E79A97F029E436950099B9A6 /* FileManager.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E7E8058829F566E5009C43A2 /* TasksViews */ = {
+			isa = PBXGroup;
+			children = (
+				E7E8058929F56706009C43A2 /* AddTaskView.swift */,
+			);
+			path = TasksViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,6 +406,7 @@
 				E731DCA529ECC69D00F15C3A /* CritterImage.swift in Sources */,
 				E79A97F529E448730099B9A6 /* CritterViewHeader.swift in Sources */,
 				E731DC9029E5F1F600F15C3A /* CritterCellView.swift in Sources */,
+				E7E8058A29F56706009C43A2 /* AddTaskView.swift in Sources */,
 				E731DCA329ECC5FE00F15C3A /* CritterViewModel.swift in Sources */,
 				E79A97F329E43E240099B9A6 /* Constants.swift in Sources */,
 				E7347ABB29E3A483005240A1 /* ContentView.swift in Sources */,

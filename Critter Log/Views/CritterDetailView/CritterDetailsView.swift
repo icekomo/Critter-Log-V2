@@ -23,7 +23,7 @@ struct CritterDetailsView: View {
                 CritterDetailTab(critter: critter).environmentObject(critterViewModel)
                     .tabItem {
                         Image(systemName: "1.circle")
-                        Text("Details")
+                        Text("Critter")
                     }
                     .tag(1)
                 

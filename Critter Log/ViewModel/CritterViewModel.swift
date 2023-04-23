@@ -101,7 +101,7 @@ class CritterViewModel: ObservableObject {
 //        print("New age \(newAge)")
 //        print("this is the critter id \(critter.id)")
         guard let index = critters.firstIndex(where: { $0.id == critter.id }) else {
-            return // Pet not found in the array
+            return // Critter not found in the array
         }
         
         critters[index].age = newAge
@@ -130,6 +130,35 @@ class CritterViewModel: ObservableObject {
         
         critters[index].showAge = showAge
         saveUpdates()
+    }
+    
+    func saveTask(for critter: Critter, task: String) {
+        // check to see which critter to save a task to
+        
+        guard let index = critters.firstIndex(where: { $0.id == critter.id }) else {
+            return // Critter not found in the array
+        }
+        
+        print("Adding this task \(task)")
+        
+        if critters[index].tasks == nil {
+            critters[index].tasks = []
+        }
+        
+        critters[index].tasks!.append(task)
+        print("this is the count \(critters[index].tasks!.count)")
+        saveUpdates()
+    }
+    
+    func displayTask(for critter: Critter, showTask: Bool) {
+        let critter = critter
+        
+        if let tasks = critter.tasks {
+            print(tasks.count)
+            print(tasks)
+        } else {
+            print("no tasks")
+        }
     }
     
     func saveUpdates() {

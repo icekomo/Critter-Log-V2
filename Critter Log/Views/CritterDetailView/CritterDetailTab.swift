@@ -35,7 +35,7 @@ struct CritterDetailTab: View {
 
 struct CritterDetailTab_Previews: PreviewProvider {
     static var previews: some View {
-        CritterDetailTab(critter: Critter.exampleCritterData[0])
+        CritterDetailTab(critter: Critter.exampleCritterData[0]).environmentObject(CritterViewModel())
     }
 }
 

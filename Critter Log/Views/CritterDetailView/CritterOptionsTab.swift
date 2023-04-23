@@ -60,7 +60,8 @@ struct CritterAge: View {
 }
 
 struct CritterOptionsTab_Previews: PreviewProvider {
+    
     static var previews: some View {
-        CritterOptionsTab(critter: Critter.exampleCritterData[0])
+        CritterOptionsTab(critter: Critter.exampleCritterData[0]).environmentObject(CritterViewModel())
     }
 }
