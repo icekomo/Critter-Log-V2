@@ -15,10 +15,22 @@ struct CritterOptionsTab: View {
     
     var body: some View {
         ZStack {
-            List {
-                CritterAge(critter: critter).environmentObject(critterViewModel)
-                Text("hello3")
-                Text("hello2")
+            
+            VStack {
+                Text("Critter Options")
+                    .font(.largeTitle)
+                List {
+                    CritterAge(critter: critter).environmentObject(critterViewModel)
+                        .listRowSeparator(.hidden)
+                    CritterContact(critter: critter).environmentObject(critterViewModel)
+                        .listRowSeparator(.hidden)
+                    Text("hello2")
+                }
+                .listStyle(PlainListStyle())
+                .padding()
+               
+//                .listRowInsets(EdgeInsets(top: 0, lead ing: 0, bottom: 40, trailing: 0))
+//                .listRowSeparator(.hidden)
             }
         }
         .background(Constants.Colors.grayLight.color)
@@ -35,8 +47,7 @@ struct CritterAge: View {
     
     var body: some View {
         HStack {
-            
-            Button("Add Age") {
+            Button("Update Age") {
                 ageOptionIsShowing = true
             }
             .sheet(isPresented: $ageOptionIsShowing) {
@@ -52,9 +63,37 @@ struct CritterAge: View {
                         critterViewModel.displayAge(for: critter, showAge: showAge)
                     }
                     .toggleStyle(SwitchToggleStyle(tint: Constants.Colors.brownDark.color))
-                    
             }
+        }
+    }
+}
+
+struct CritterContact: View {
+    @State private var showContact = true
+    @State var contactOptionIsShowing = false
+    @EnvironmentObject var critterViewModel: CritterViewModel
+    
+    let critter: Critter
+    var body: some View {
+        HStack {
             
+            Button("Update Contact") {
+                contactOptionIsShowing = true
+            }
+            .sheet(isPresented: $contactOptionIsShowing) {
+                AgeOptionView(critter: critter, ageOptionIsShowing: $contactOptionIsShowing)
+                    .presentationDetents([.height(200)])
+                    .presentationBackground(.ultraThinMaterial)
+            }
+            Spacer()
+            VStack(alignment: .trailing) {
+                Text("Show contact")
+                Toggle("", isOn: $showContact)
+                    .onChange(of: showContact) { _ in
+                        critterViewModel.displayContact(for: critter, showContact: showContact)
+                    }
+                    .toggleStyle(SwitchToggleStyle(tint: Constants.Colors.brownDark.color))
+            }
         }
     }
 }

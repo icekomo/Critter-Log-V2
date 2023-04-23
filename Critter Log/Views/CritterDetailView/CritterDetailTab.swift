@@ -13,20 +13,35 @@ struct CritterDetailTab: View {
     
     var body: some View {
         ZStack {
-            VStack {
-                ImageView(critter: critter)
-                NameView(critter: critter)
-                HStack {
-                    if critter.showAge == false {
-                        AgeView(critter: critter).hidden()
-                    } else {
-                        AgeView(critter: critter)
+            ScrollView {
+                VStack {
+                    ImageView(critter: critter)
+                    NameView(critter: critter)
+                    HStack {
+                        if critter.showAge == false {
+                            AgeView(critter: critter).hidden()
+                        } else {
+                            AgeView(critter: critter)
+                        }
+                        
+                        if critter.showContact == false {
+                            ContactView(critter: critter).hidden()
+                        } else {
+                            ContactView(critter: critter)
+                        }
+                       
                     }
                     
-                    ContactView(critter: critter)
-                }
+                    VStack {
+                        if critter.showEmergencyContact == false {
+                            EmergencyContactView(critter: critter).hidden()
+                        } else {
+                            EmergencyContactView(critter: critter)
+                        }
+                    }
                 
-                Spacer()
+                    Spacer()
+                }
             }
         }
         .background(Constants.Colors.grayLight.color)
@@ -84,7 +99,6 @@ struct AgeView: View {
         }
         .padding()
         .background(Color.white)
-        
     }
 }
 
@@ -94,6 +108,18 @@ struct ContactView: View {
     var body: some View {
         ZStack {
             Text("Contact")
+        }
+        .padding()
+        .background(Color.white)
+    }
+}
+
+struct EmergencyContactView: View {
+    let critter: Critter
+    
+    var body: some View {
+        ZStack {
+            Text("Emergency")
         }
         .padding()
         .background(Color.white)

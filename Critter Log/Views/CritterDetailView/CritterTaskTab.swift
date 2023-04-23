@@ -26,8 +26,13 @@ struct CritterTaskTab: View {
                 .padding()
                 
                 if let tasks = critter.tasks {
-                    List(tasks, id: \.self) { task in
-                        Text(task)
+                    List {
+                        ForEach(tasks, id: \.self) { task in
+                            Text(task)
+                        }
+                        .onDelete(perform: { indexSet in
+                            critterViewModel.deleteTask(at: indexSet, critter: critter)
+                                            })
                     }
                 }
             }

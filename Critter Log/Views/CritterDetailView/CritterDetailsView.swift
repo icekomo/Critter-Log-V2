@@ -16,7 +16,6 @@ struct CritterDetailsView: View {
     let critter: Critter
     
     var body: some View {
-//        Text("\(critter.name)")
         TabView(selection: $selectedTab) {
             
             Group {
@@ -33,6 +32,7 @@ struct CritterDetailsView: View {
                         Text("Tasks")
                     }
                     .tag(2)
+                    .badge(critter.tasks?.count != nil ? critter.tasks!.count : 0)
                 
                 CritterOptionsTab(critter: critter).environmentObject(critterViewModel)
                     .tabItem {
@@ -40,9 +40,12 @@ struct CritterDetailsView: View {
                         Text("Options")
                     }
                     .tag(3)
+                    
             }
+            .toolbar(.visible, for: .tabBar)
+            .toolbarBackground(Color.white, for: .tabBar)
         }
-        .background(Constants.Colors.grayLight.color)
+        .accentColor(Constants.Colors.brownLight.color)
     }
 }
 
@@ -51,6 +54,6 @@ struct CritterDetailsView_Previews: PreviewProvider {
     @EnvironmentObject var critterViewModel: CritterViewModel
     
     static var previews: some View {
-        CritterDetailsView(critter: Critter.exampleCritterData[0])
+        CritterDetailsView(critter: Critter.exampleCritterData[0]).environmentObject(CritterViewModel())
     }
 }

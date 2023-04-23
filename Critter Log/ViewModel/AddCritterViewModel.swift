@@ -45,7 +45,7 @@ class AddCritterViewModel: ObservableObject {
             guard let url = URL(string: "https://api.thecatapi.com/v1/images/search") else {
                 return
             }
-            URLSession.shared.dataTask(with: url) { data, response, error in
+            URLSession.shared.dataTask(with: url) { data, _, error in
                 if let data = data {
                     let decoder = JSONDecoder()
                     do {

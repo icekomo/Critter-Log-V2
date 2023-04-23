@@ -106,47 +106,47 @@ class CritterViewModel: ObservableObject {
         
         critters[index].age = newAge
         saveUpdates()
-        
-//        guard let url = FileManager.default.urls(for: .documentDirectory,
-//                                                 in: .userDomainMask).first?.appendingPathComponent("critters.json") else {
-//            fatalError("Failed to find critters.json in main bundle")
-//        }
-//
-//        do {
-//            let data = try JSONEncoder().encode(critters)
-//            try data.write(to: url)
-//        } catch {
-//            fatalError("Failed to encode or write pets.json: \(error)")
-//        }
     }
     
     func displayAge(for critter: Critter, showAge: Bool) {
-        
-        print("this is the toggle value \(showAge)")
-        
+//        print("this is the toggle value \(showAge)")
         guard let index = critters.firstIndex(where: { $0.id == critter.id }) else {
             return // Pet not found in the array
         }
-        
         critters[index].showAge = showAge
+        saveUpdates()
+    }
+    
+    func displayContact(for critter: Critter, showContact: Bool) {
+        print("this is the toggle value \(showContact)")
+        guard let index = critters.firstIndex(where: { $0.id == critter.id }) else {
+            return // Pet not found in the array
+        }
+        critters[index].showContact = showContact
+        saveUpdates()
+    }
+    
+    func displayEmergencyContact(for critter: Critter, showEmergencyContact: Bool) {
+//        print("this is the toggle value \(showAge)")
+        guard let index = critters.firstIndex(where: { $0.id == critter.id }) else {
+            return // Pet not found in the array
+        }
+        critters[index].showEmergencyContact = showEmergencyContact
         saveUpdates()
     }
     
     func saveTask(for critter: Critter, task: String) {
         // check to see which critter to save a task to
-        
         guard let index = critters.firstIndex(where: { $0.id == critter.id }) else {
             return // Critter not found in the array
         }
-        
-        print("Adding this task \(task)")
         
         if critters[index].tasks == nil {
             critters[index].tasks = []
         }
         
         critters[index].tasks!.append(task)
-        print("this is the count \(critters[index].tasks!.count)")
+//        print("this is the count \(critters[index].tasks!.count)")
         saveUpdates()
     }
     
@@ -159,6 +159,16 @@ class CritterViewModel: ObservableObject {
         } else {
             print("no tasks")
         }
+    }
+    
+    func deleteTask(at offsets: IndexSet, critter: Critter) {
+        var critter = critter
+        guard let index = critters.firstIndex(where: { $0.id == critter.id }) else {
+            return // Critter not found in the array
+        }
+        
+        critters[index].tasks!.remove(atOffsets: offsets)
+        saveUpdates()
     }
     
     func saveUpdates() {

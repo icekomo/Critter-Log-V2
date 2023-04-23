@@ -40,7 +40,6 @@ struct CritterView: View {
                                     CritterCellView(critter: critter)
                                 }
                             }
-                            
                             .onDelete(perform: critterViewModel.delete)
                             .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: -5, trailing: 0))
                             .listRowSeparator(.hidden)
