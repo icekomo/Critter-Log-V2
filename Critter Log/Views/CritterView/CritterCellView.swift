@@ -8,47 +8,30 @@
 import SwiftUI
 
 struct CritterCellView: View {
-    
-//    let critterName: String
-    
     let critter: Critter
     
     var body: some View {
         HStack {
-            // grab a random image
-//            if let critterImage = viewModel.critterImage {
-//
-//                // check to see if there is a image value
-//                if critter.critterURL != nil {
-//                    Image(critter.critterURL!)
-//             }
-                // else {
-//                    RemoteImage(url: critterImage.url)
-// .padding(.leading)
-//                }
-            
-//            } else {
-//                Image(systemName: "photo.on.rectangle")
-//                    .padding()
-//            }
-        
-//            if let critterURL = critter.critterURL {
-//                Image(critterURL)
-//                  .padding()
-//            } else {
-//                Image(systemName: "photo.on.rectangle")
-//                  .padding()
-//            }
+            Image("TestDog")
+                .resizable()
+                .scaledToFill()
+                .frame(width: 50, height: 50)
+                .background(Color("GreenDark"))
+                .cornerRadius(50)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 50)
+                        .stroke(Color("BrownLight"), lineWidth: 4)
+                )
+                .padding()
+                .accessibility(identifier: "critterListImage")
             
             Text("\(critter.name)")
+                .font(.headline)
             Spacer()
             Image(systemName: "chevron.forward")
                 .padding()
                 .padding(.vertical, 15)
         }
-//        .onAppear {
-//            viewModel.fetchCatImage()
-//        }
         .background(.white)
         .padding()
         
@@ -58,8 +41,6 @@ struct CritterCellView: View {
 struct CritterCellView_Previews: PreviewProvider {
 
     static var previews: some View {
-//        CritterCellView(critter: Critter)
-        
         HStack {
             Image(systemName: "photo.on.rectangle")
             Text("Critter Name")

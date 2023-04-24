@@ -42,8 +42,8 @@ struct CritterDetailsView: View {
                     .tag(3)
                     
             }
-            .toolbar(.visible, for: .tabBar)
-            .toolbarBackground(Color.white, for: .tabBar)
+            .toolbarBackground(.visible, for: .tabBar)
+            .toolbarBackground(Constants.Colors.charcoal.color, for: .tabBar)
         }
         .accentColor(Constants.Colors.brownLight.color)
     }

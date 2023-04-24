@@ -10,54 +10,103 @@ import SwiftUI
 struct CritterView: View {
     
     @EnvironmentObject var critterViewModel: CritterViewModel
+    @State var addCritterIsShowing = false
+    
+    var addCritterViewModel = AddCritterViewModel()
     
     var body: some View {
         
         NavigationStack {
-            VStack {
-                CritterViewHeader().environmentObject(critterViewModel)
-                Spacer()
+            ZStack(alignment: .bottomTrailing) {
                 
-                if critterViewModel.critters.isEmpty {
+                VStack {
+                    //                CritterViewHeader().environmentObject(critterViewModel)
+                                    Spacer()
                     
-                    Image("Welcome-logo")
-                        .resizable()
-                        .scaledToFit()
-                        .padding(50.0)
-                } else {
-                    
-                    VStack(spacing: 0) {
-                        Text("Critters")
-                            .font(.largeTitle)
-                        List {
-                            ForEach(critterViewModel.critters, id: \.name) { critter in
-                                
-                                ZStack(alignment: .leading) {
-                                    NavigationLink( destination: CritterDetailsView(critter: critter).environmentObject(critterViewModel)) {
-                                        EmptyView()
-                                    }
-                                    .opacity(0)
-                                    CritterCellView(critter: critter)
-                                }
+                    if critterViewModel.critters.isEmpty {
+                        
+                        Image("Welcome-logo")
+                            .resizable()
+                            .scaledToFit()
+                            .padding(50.0)
+                    } else {
+                        
+                        VStack(spacing: 0) {
+                            HStack {
+                                Text("Critters")
+                                    .font(.largeTitle)
+                                Image("Logo-Header")
+                                    .resizable()
+                                    .frame(width: 48, height: 38)
+                                    .foregroundColor(.black)
                             }
-                            .onDelete(perform: critterViewModel.delete)
-                            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: -5, trailing: 0))
-                            .listRowSeparator(.hidden)
-                            .padding(.vertical, -5)
-                            .background(Constants.Colors.grayLight.color)
-    
+                            .padding(.top, 40)
+                            
+                            List {
+                                ForEach(critterViewModel.critters, id: \.name) { critter in
+                                    
+                                    ZStack(alignment: .leading) {
+                                        NavigationLink( destination: CritterDetailsView(critter: critter).environmentObject(critterViewModel)) {
+                                            EmptyView()
+                                        }
+                                        .opacity(0)
+                                        CritterCellView(critter: critter)
+                                    }
+                                }
+                                .onDelete(perform: critterViewModel.delete)
+                                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: -5, trailing: 0))
+                                .listRowSeparator(.hidden)
+                                .padding(.vertical, -5)
+                                .background(Constants.Colors.grayLight.color)
+                                
+                            }
+                            .listStyle(PlainListStyle())
+                            
                         }
-                        .listStyle(PlainListStyle())
                     }
+                    
+                    Spacer()
+                    
+                }
+                .background(Constants.Colors.grayLight.color)
+                .toolbarBackground(.white, for: .navigationBar)
+                .toolbarBackground(.visible, for: .navigationBar)
+                .navigationTitle("Critter Log")
+                //            .navigationBarItems(trailing: Image(systemName: "gear"))
+                .onAppear {
+                    critterViewModel.loadCritters()
                 }
                 
-                Spacer()
-                
+                HStack {
+                    Button {
+                        addCritterIsShowing = true
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                    .frame(width: 20, height: 20)
+                    .font(.system(size: 28))
+                    .padding()
+                    .background(Constants.Colors.brownDark.color)
+                    .foregroundColor(.white)
+//                    .border(Color.black, width: 2)
+                    .cornerRadius(70)
+                    .accessibility(identifier: "addCritterButton")
+                    .sheet(isPresented: $addCritterIsShowing) {
+                        
+                        AddCritterView(addCritterViewModel: addCritterViewModel,
+                                       addCritterIsShowing: $addCritterIsShowing).environmentObject(critterViewModel)
+                            .presentationDetents([.height(200)])
+                            .presentationBackground(.ultraThinMaterial)
+                    }
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 70)
+                            .stroke(Color.white, lineWidth: 3)
+                        )
+                }
+                .padding(.trailing, 16)
+                .padding(.bottom, 16)
             }
-            .background(Constants.Colors.grayLight.color)
-            .onAppear {
-                critterViewModel.loadCritters()
-            }
+            
         }
     }
 }

@@ -9,30 +9,45 @@ import SwiftUI
 
 struct CritterTaskTab: View {
     @EnvironmentObject var critterViewModel: CritterViewModel
-    
-    let critter: Critter
-    
     @State var addTaskIsShowing = false
+    let critter: Critter
     
     var body: some View {
         
         ZStack(alignment: .bottomTrailing) {
             VStack(spacing: 0) {
                 
-                HStack {
-                    Text("Tasks for \(critter.name)")
-                        .font(.largeTitle)
-                }
-                .padding()
-                
                 if let tasks = critter.tasks {
+                    
+                    HStack {
+                        Text("Tasks for \(critter.name)")
+                            .font(.largeTitle)
+                    }
+                    .padding()
+                    
                     List {
                         ForEach(tasks, id: \.self) { task in
                             Text(task)
+                                .cornerRadius(0)
                         }
                         .onDelete(perform: { indexSet in
                             critterViewModel.deleteTask(at: indexSet, critter: critter)
-                                            })
+                        })
+                    }
+                    .listStyle(PlainListStyle())
+                    .padding()
+                } else {
+                    VStack {
+                        HStack {
+                            Spacer()
+                        }
+                        Spacer()
+                        Image("Logo-Header")
+                            .resizable()
+                            .frame(width: 48, height: 38)
+                            .foregroundColor(.black)
+                        Text("Please add a task for \(critter.name)!")
+                        Spacer()
                     }
                 }
             }
@@ -55,11 +70,15 @@ struct CritterTaskTab: View {
                         .presentationDetents([.height(200)])
                         .presentationBackground(.ultraThinMaterial)
                 }
+                .overlay(
+                    RoundedRectangle(cornerRadius: 70)
+                        .stroke(Color.white, lineWidth: 3)
+                    )
             }
             .padding(.trailing, 16)
             .padding(.bottom, 16)
-            
         }
+        .background(Constants.Colors.grayLight.color)
         .onAppear {
             critterViewModel.displayTask(for: critter, showTask: false)
         }

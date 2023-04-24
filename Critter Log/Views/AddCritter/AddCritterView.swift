@@ -22,8 +22,10 @@ struct AddCritterView: View {
             VStack {
                 Text("Add Critter")
                     .font(.title2)
-                    .padding(.bottom, 10)
+                    .padding(.bottom, 0)
+                    .foregroundColor(.white)
                 Text("To get started all you need is a critter name")
+                    .foregroundColor(.white)
                 TextField("Name", text: $name)
                     .padding()
                     .background(Constants.Colors.grayLight.color)
@@ -49,7 +51,7 @@ struct AddCritterView: View {
                 .foregroundColor(.white)
             }
             .padding()
-            .background(Color.white)
+            .background(Constants.Colors.charcoal.color)
         }
     }
 }

@@ -24,8 +24,10 @@ struct AddTaskView: View {
             VStack {
                 Text("Add Task")
                     .font(.title2)
-                    .padding(.bottom, 10)
+                    .padding(.bottom, 0)
+                    .foregroundColor(.white)
                 Text("Please add a task for \(critter.name)")
+                    .foregroundColor(.white)
                 TextField("Task", text: $task)
                     .padding()
                     .background(Constants.Colors.grayLight.color)
@@ -48,7 +50,7 @@ struct AddTaskView: View {
                 .foregroundColor(.white)
             }
             .padding()
-            .background(Color.white)
+            .background(Constants.Colors.charcoal.color)
         }
     }
 }
