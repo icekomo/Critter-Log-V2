@@ -46,6 +46,9 @@ struct CritterDetailsView: View {
             .toolbarBackground(Constants.Colors.charcoal.color, for: .tabBar)
         }
         .accentColor(Constants.Colors.brownLight.color)
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbarBackground(Color.white, for: .navigationBar)
+        .toolbarBackground(.visible, for: .navigationBar)
     }
 }
 

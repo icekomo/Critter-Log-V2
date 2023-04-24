@@ -49,10 +49,12 @@ struct CritterView: View {
                                         NavigationLink( destination: CritterDetailsView(critter: critter).environmentObject(critterViewModel)) {
                                             EmptyView()
                                         }
+                                        
                                         .opacity(0)
                                         CritterCellView(critter: critter)
                                     }
                                 }
+                                
                                 .onDelete(perform: critterViewModel.delete)
                                 .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: -5, trailing: 0))
                                 .listRowSeparator(.hidden)
@@ -61,7 +63,6 @@ struct CritterView: View {
                                 
                             }
                             .listStyle(PlainListStyle())
-                            
                         }
                     }
                     
@@ -69,10 +70,10 @@ struct CritterView: View {
                     
                 }
                 .background(Constants.Colors.grayLight.color)
-                .toolbarBackground(.white, for: .navigationBar)
-                .toolbarBackground(.visible, for: .navigationBar)
                 .navigationTitle("Critter Log")
-                //            .navigationBarItems(trailing: Image(systemName: "gear"))
+//                .navigationBarTitleDisplayMode(.inline)
+                .toolbarBackground(Color.white, for: .navigationBar)
+                .toolbarBackground(.visible, for: .navigationBar)
                 .onAppear {
                     critterViewModel.loadCritters()
                 }
@@ -88,7 +89,6 @@ struct CritterView: View {
                     .padding()
                     .background(Constants.Colors.brownDark.color)
                     .foregroundColor(.white)
-//                    .border(Color.black, width: 2)
                     .cornerRadius(70)
                     .accessibility(identifier: "addCritterButton")
                     .sheet(isPresented: $addCritterIsShowing) {
@@ -106,7 +106,7 @@ struct CritterView: View {
                 .padding(.trailing, 16)
                 .padding(.bottom, 16)
             }
-            
+            .tint(Color.black)
         }
     }
 }

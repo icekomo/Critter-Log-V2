@@ -162,7 +162,7 @@ class CritterViewModel: ObservableObject {
     }
     
     func deleteTask(at offsets: IndexSet, critter: Critter) {
-        var critter = critter
+        let critter = critter
         guard let index = critters.firstIndex(where: { $0.id == critter.id }) else {
             return // Critter not found in the array
         }
