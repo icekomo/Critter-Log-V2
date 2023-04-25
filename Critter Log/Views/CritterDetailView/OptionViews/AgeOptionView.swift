@@ -28,7 +28,7 @@ struct AgeOptionView: View {
                 Text("Please update the age of \(critter.name)")
                 TextField("Age", text: $age)
                     .padding()
-                    .background(Constants.Colors.grayLight.color)
+                    .background(Constants.Colors.greenLight.color)
                     .onTapGesture {
                         age = ""
                     }

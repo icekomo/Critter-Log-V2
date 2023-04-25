@@ -59,7 +59,7 @@ struct CritterView: View {
                                 .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: -5, trailing: 0))
                                 .listRowSeparator(.hidden)
                                 .padding(.vertical, -5)
-                                .background(Constants.Colors.grayLight.color)
+                                .background(Constants.Colors.greenLight.color)
                                 
                             }
                             .listStyle(PlainListStyle())
@@ -69,7 +69,7 @@ struct CritterView: View {
                     Spacer()
                     
                 }
-                .background(Constants.Colors.grayLight.color)
+                .background(Constants.Colors.greenLight.color)
                 .navigationTitle("Critter Log")
 //                .navigationBarTitleDisplayMode(.inline)
                 .toolbarBackground(Color.white, for: .navigationBar)

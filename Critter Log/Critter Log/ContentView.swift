@@ -20,7 +20,7 @@ struct ContentView: View {
                 VStack(spacing: 0.0) {
                     CritterView().environmentObject(critterViewModel)
                 }
-                .background(Constants.Colors.grayLight.color)
+                .background(Constants.Colors.greenLight.color)
 
             }
         }

@@ -16,7 +16,10 @@ enum Constants {
     
     enum Colors {
         case grayLight
+        case greenLight
+        case green
         case charcoal
+        case charcoalLight
         case brownLight
         case brownDark
         
@@ -24,8 +27,14 @@ enum Constants {
             switch self {
             case .grayLight:
                 return Color("GrayLight")
+            case .greenLight:
+                return Color("GreenLight")
+            case .green:
+                return Color("Green")
             case .charcoal:
                 return Color("Charcoal")
+            case .charcoalLight:
+                return Color("CharcoalLight")
             case .brownLight:
                 return Color("BrownLight")
             case .brownDark:

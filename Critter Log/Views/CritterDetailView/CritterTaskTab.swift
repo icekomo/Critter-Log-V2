@@ -22,6 +22,7 @@ struct CritterTaskTab: View {
                     HStack {
                         Text("Tasks for \(critter.name)")
                             .font(.largeTitle)
+                            .foregroundColor(Constants.Colors.charcoal.color)
                     }
                     .padding()
                     
@@ -47,11 +48,12 @@ struct CritterTaskTab: View {
                             .frame(width: 48, height: 38)
                             .foregroundColor(.black)
                         Text("Please add a task for \(critter.name)!")
+                            .foregroundColor(Constants.Colors.charcoal.color)
                         Spacer()
                     }
                 }
             }
-            .background(Constants.Colors.grayLight.color)
+            .background(Constants.Colors.greenLight.color)
             
             HStack {
                 Button {
@@ -78,7 +80,7 @@ struct CritterTaskTab: View {
             .padding(.trailing, 16)
             .padding(.bottom, 16)
         }
-        .background(Constants.Colors.grayLight.color)
+        .background(Constants.Colors.greenLight.color)
         .onAppear {
             critterViewModel.displayTask(for: critter, showTask: false)
         }

@@ -30,7 +30,7 @@ struct AddTaskView: View {
                     .foregroundColor(.white)
                 TextField("Task", text: $task)
                     .padding()
-                    .background(Constants.Colors.grayLight.color)
+                    .background(Constants.Colors.greenLight.color)
                     .onTapGesture {
                         task = ""
                     }

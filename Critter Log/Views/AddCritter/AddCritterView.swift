@@ -28,7 +28,7 @@ struct AddCritterView: View {
                     .foregroundColor(.white)
                 TextField("Name", text: $name)
                     .padding()
-                    .background(Constants.Colors.grayLight.color)
+                    .background(Constants.Colors.greenLight.color)
                     .onTapGesture {
                         name = ""
                     }

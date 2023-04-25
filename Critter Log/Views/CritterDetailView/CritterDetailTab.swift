@@ -44,7 +44,7 @@ struct CritterDetailTab: View {
                 }
             }
         }
-        .background(Constants.Colors.grayLight.color)
+        .background(Constants.Colors.greenLight.color)
     }
 }
 
@@ -89,10 +89,7 @@ struct AgeView: View {
                         .fontWeight(.black)
                         .foregroundColor(Constants.Colors.brownLight.color)
                 }
-                .frame(width: 60, height: 60)
-                .padding()
-                .background(Color.black)
-                .cornerRadius(70)
+                
             } else {
                 Text("no age to show")
             }
