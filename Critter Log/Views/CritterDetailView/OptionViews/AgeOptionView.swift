@@ -24,7 +24,7 @@ struct AgeOptionView: View {
             VStack {
                 Text("Critter Age")
                     .font(.title2)
-                    .padding(.bottom, 10)
+                    .padding(.bottom, 2)
                 Text("Please update the age of \(critter.name)")
                 TextField("Age", text: $age)
                     .padding()
@@ -41,7 +41,7 @@ struct AgeOptionView: View {
                         let ageInt = Int(age) ?? 0
                         print("This is the new age \(ageInt)")
                         critterViewModel.updateAge(for: critter, newAge: ageInt)
-//                        age = ""
+                        age = ""
                         
                         ageOptionIsShowing.toggle()
                     }

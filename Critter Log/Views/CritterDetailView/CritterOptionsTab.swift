@@ -48,21 +48,19 @@ struct CritterAge: View {
     let critter: Critter
     
     var body: some View {
-        VStack (alignment: .leading, spacing: 0){
+        VStack(alignment: .leading, spacing: 0) {
             Text("Age")
                 .font(.headline)
                 .padding(5)
                 .background(Constants.Colors.charcoal.color)
                 .foregroundColor(.white)
             HStack {
-                VStack {
+                VStack(alignment: .leading) {
                     HStack {
                         Text("\(critter.name)'s age:")
-                            .padding(EdgeInsets(top: 8, leading: 10, bottom: 5, trailing: 0))
                             .foregroundColor(Constants.Colors.charcoal.color)
                             .font(.system(size: 16))
                         if let critterAge = critter.age {
-                            
                             Text("\(String(critterAge))")
                                 .foregroundColor(.white)
                                 .frame(width: 10, height: 10)
@@ -83,7 +81,7 @@ struct CritterAge: View {
                         ageOptionIsShowing = true
                     } label: {
                         HStack {
-                            Text("Update Age")
+                            Text("Update")
                                 .font(.system(size: 14))
                                 .foregroundColor(.white)
                             Image(systemName: "chevron.right")
@@ -101,7 +99,7 @@ struct CritterAge: View {
                             .presentationBackground(.ultraThinMaterial)
                     }
                 }
-                
+                .padding()
                 Spacer()
                 VStack(alignment: .center) {
                     
@@ -122,7 +120,7 @@ struct CritterAge: View {
                     }
                     .padding(.horizontal)
                 }
-                .frame(width: 80)
+                .frame(width: 80, height: 73)
                 .padding()
                 .background(Constants.Colors.charcoal.color)
                 
@@ -148,9 +146,9 @@ struct CritterContact: View {
                 .foregroundColor(.white)
             
             HStack {
-                VStack {
+                VStack(alignment: .leading) {
                     HStack {
-                        VStack(alignment: .leading){
+                        VStack(alignment: .leading) {
                             if let contactName = critter.contactName {
                                 Text("\(contactName)")
                                     .foregroundColor(Constants.Colors.charcoal.color)
@@ -171,15 +169,13 @@ struct CritterContact: View {
                                     .font(.system(size: 16))
                             }
                         }
-                        .padding(EdgeInsets(top: 8, leading: 10, bottom: 0, trailing: 0))
-                        
                     }
                     
                     Button {
                         contactOptionIsShowing = true
                     } label: {
                         HStack {
-                            Text("Update Age")
+                            Text("Update")
                                 .font(.system(size: 14))
                                 .foregroundColor(.white)
                             Image(systemName: "chevron.right")
@@ -192,12 +188,12 @@ struct CritterContact: View {
                         
                     }
                     .sheet(isPresented: $contactOptionIsShowing) {
-                        AgeOptionView(critter: critter, ageOptionIsShowing: $contactOptionIsShowing)
-                            .presentationDetents([.height(200)])
+                        ContactOptionView(critter: critter, contactOptionIsShowing: $contactOptionIsShowing)
+                            .presentationDetents([.height(270)])
                             .presentationBackground(.ultraThinMaterial)
                     }
                 }
-                
+                .padding()
                 Spacer()
                 VStack(alignment: .center) {
                     
@@ -218,35 +214,12 @@ struct CritterContact: View {
                     }
                     .padding(.horizontal)
                 }
-                .frame(width: 80)
+                .frame(width: 80, height: 92)
                 .padding()
                 .background(Constants.Colors.charcoal.color)
                 
             }
             .background(.white)
-            
-            //        HStack {
-            //
-            //            Button("Update Contact") {
-            //                contactOptionIsShowing = true
-            //            }
-            //            .sheet(isPresented: $contactOptionIsShowing) {
-            //                AgeOptionView(critter: critter, ageOptionIsShowing: $contactOptionIsShowing)
-            //                    .presentationDetents([.height(200)])
-            //                    .presentationBackground(.ultraThinMaterial)
-            //            }
-            //            Spacer()
-            //            VStack(alignment: .trailing) {
-            //                Text("Show contact")
-            //                Toggle("", isOn: $showContact)
-            //                    .onChange(of: showContact) { _ in
-            //                        critterViewModel.displayContact(for: critter, showContact: showContact)
-            //                    }
-            //                    .toggleStyle(SwitchToggleStyle(tint: Constants.Colors.brownDark.color))
-            //            }
-            //        }
-            //        .padding()
-            //        .background(.white)
         }
     }
 }

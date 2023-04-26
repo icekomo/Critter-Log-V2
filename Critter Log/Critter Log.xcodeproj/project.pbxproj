@@ -31,6 +31,7 @@
 		E79A97F929E45A050099B9A6 /* CritterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A97F829E45A050099B9A6 /* CritterData.swift */; };
 		E79A97FD29E57F8B0099B9A6 /* AddCritterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A97FC29E57F8B0099B9A6 /* AddCritterView.swift */; };
 		E7E8058A29F56706009C43A2 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E8058929F56706009C43A2 /* AddTaskView.swift */; };
+		E7F7254229F858E60084318F /* ContactOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F7254129F858E60084318F /* ContactOptionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		E79A97F829E45A050099B9A6 /* CritterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterData.swift; sourceTree = "<group>"; };
 		E79A97FC29E57F8B0099B9A6 /* AddCritterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCritterView.swift; sourceTree = "<group>"; };
 		E7E8058929F56706009C43A2 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
+		E7F7254129F858E60084318F /* ContactOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactOptionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				E731DCB729F042BF00F15C3A /* AgeOptionView.swift */,
+				E7F7254129F858E60084318F /* ContactOptionView.swift */,
 			);
 			path = OptionViews;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				E7347ABB29E3A483005240A1 /* ContentView.swift in Sources */,
 				E731DCB329F0281000F15C3A /* CritterOptionsTab.swift in Sources */,
 				E731DCAC29EE21B400F15C3A /* AddCritterViewModel.swift in Sources */,
+				E7F7254229F858E60084318F /* ContactOptionView.swift in Sources */,
 				E79A97F929E45A050099B9A6 /* CritterData.swift in Sources */,
 				E731DCB829F042BF00F15C3A /* AgeOptionView.swift in Sources */,
 				E731DCAF29F01F4500F15C3A /* CritterDetailsView.swift in Sources */,
