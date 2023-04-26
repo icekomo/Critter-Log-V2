@@ -41,13 +41,13 @@ struct CritterDetailTab: View {
                             }
                             
                         }
-                        VStack {
-                            if critter.showEmergencyContact == false {
-                                EmergencyContactView(critter: critter).hidden()
-                            } else {
-                                EmergencyContactView(critter: critter)
-                            }
-                        }
+//                        VStack {
+//                            if critter.showEmergencyContact == false {
+//                                EmergencyContactView(critter: critter).hidden()
+//                            } else {
+//                                EmergencyContactView(critter: critter)
+//                            }
+//                        }
                         
                         Spacer()
                     }
@@ -138,16 +138,44 @@ struct ContactView: View {
     
     var body: some View {
         ZStack {
-            VStack{
-//                Text("\(critter.contactName)")
+            if let conatctName = critter.contactName {
+                HStack {
+                    VStack {
+                        Image(systemName: "phone.fill")
+                            .foregroundColor(Color.white)
+                    }
+                    .padding()
+                    .background(Constants.Colors.brownDark.color)
+                    .cornerRadius(10)
+                    
+                    VStack(alignment: .leading) {
+                        Text("Contact")
+                            .font(.headline)
+                            .fontWeight(.medium)
+                        Text("\(conatctName)")
+                            .font(.subheadline)
+                    }
+                }
+            } else {
                 
-//                if
-//                
-//                Link(destination: URL(string: "tel:\(critter.contactPhone)")!) {
-//                            Text("Call")
-//                        }
+                HStack {
+                    VStack {
+                        Image(systemName: "phone.fill")
+                            .foregroundColor(Constants.Colors.green.color)
+                    }
+                    .padding()
+                    .background(Constants.Colors.greenLight.color)
+                    .cornerRadius(10)
+                    
+                    VStack(alignment: .leading) {
+                        Text("Contact")
+                            .font(.headline)
+                            .fontWeight(.medium)
+                        Text("Add a contact")
+                            .font(.subheadline)
+                    }
+                }
             }
-            
         }
         .padding()
         .background(Color.white)

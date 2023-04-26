@@ -126,6 +126,15 @@ class CritterViewModel: ObservableObject {
         saveUpdates()
     }
     
+    func updateContact(for critter: Critter, newName: String, newPhone: String) {
+        guard let index = critters.firstIndex(where: { $0.id == critter.id }) else {
+            return // Critter not found in the array
+        }
+        critters[index].contactName = newName
+        critters[index].contactPhone = newPhone
+        saveUpdates()
+    }
+    
     func displayEmergencyContact(for critter: Critter, showEmergencyContact: Bool) {
 //        print("this is the toggle value \(showAge)")
         guard let index = critters.firstIndex(where: { $0.id == critter.id }) else {

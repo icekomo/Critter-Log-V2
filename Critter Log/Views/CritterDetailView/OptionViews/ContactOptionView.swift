@@ -27,29 +27,46 @@ struct ContactOptionView: View {
                     .font(.title2)
                     .padding(.bottom, 2)
                 Text("Please update the contact information for\(critter.name)")
-                TextField("Contact Name", text: $contactName)
-                    .padding()
-                    .background(Constants.Colors.greenLight.color)
-                    .onTapGesture {
-                        contactName = ""
-                    }
                 
-                TextField("Phone Number", text: $contactPhone)
-                    .padding()
-                    .background(Constants.Colors.greenLight.color)
-                    .onTapGesture {
-                        contactPhone = ""
-                    }
+                if var contactName = critter.contactName {
+                    TextField("\(contactName)", text: $contactName)
+                        .padding()
+                        .background(Constants.Colors.greenLight.color)
+                        .onTapGesture {
+                            contactName = ""
+                        }
+                } else {
+                    TextField("Contact Name", text: $contactName)
+                        .padding()
+                        .background(Constants.Colors.greenLight.color)
+                        .onTapGesture {
+                            contactName = ""
+                        }
+                }
+                if var contactPhone = critter.contactPhone {
+                    TextField("\(contactPhone)", text: $contactPhone)
+                        .padding()
+                        .background(Constants.Colors.greenLight.color)
+                        .onTapGesture {
+                            contactPhone = ""
+                        }
+                } else {
+                    TextField("Phone Number", text: $contactPhone)
+                        .padding()
+                        .background(Constants.Colors.greenLight.color)
+                        .onTapGesture {
+                            contactPhone = ""
+                        }
+                }
                 
-                Button("Update Age") {
+                Button("Update Contact") {
                     
                     if contactName.isEmpty || contactName == "Please add an age" {
                         contactName = "Please add an age"
                     } else {
-//                        let ageInt = Int(age) ?? 0
-//                        print("This is the new age \(ageInt)")
-//                        critterViewModel.updateAge(for: critter, newAge: ageInt)
+                        critterViewModel.updateContact(for: critter, newName: contactName, newPhone: contactPhone)
                         contactName = ""
+                        contactPhone = ""
                         
                         contactOptionIsShowing.toggle()
                     }
