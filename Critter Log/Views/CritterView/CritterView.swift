@@ -13,15 +13,15 @@ struct CritterView: View {
     @State var addCritterIsShowing = false
     
     var addCritterViewModel = AddCritterViewModel()
-    
+
     var body: some View {
         
         NavigationStack {
             ZStack(alignment: .bottomTrailing) {
-                
                 VStack {
-                    //                CritterViewHeader().environmentObject(critterViewModel)
-                                    Spacer()
+//                CritterViewHeader().environmentObject(critterViewModel)
+                    
+                    Spacer()
                     
                     if critterViewModel.critters.isEmpty {
                         
@@ -44,7 +44,6 @@ struct CritterView: View {
                             
                             List {
                                 ForEach(critterViewModel.critters, id: \.name) { critter in
-                                    
                                     ZStack(alignment: .leading) {
                                         NavigationLink( destination: CritterDetailsView(critter: critter).environmentObject(critterViewModel)) {
                                             EmptyView()
@@ -54,7 +53,6 @@ struct CritterView: View {
                                         CritterCellView(critter: critter)
                                     }
                                 }
-                                
                                 .onDelete(perform: critterViewModel.delete)
                                 .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: -5, trailing: 0))
                                 .listRowSeparator(.hidden)
@@ -108,6 +106,7 @@ struct CritterView: View {
             }
             .tint(Color.black)
         }
+        
     }
 }
 

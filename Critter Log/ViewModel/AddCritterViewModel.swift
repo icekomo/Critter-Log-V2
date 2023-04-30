@@ -9,9 +9,12 @@ import Foundation
 
 class AddCritterViewModel: ObservableObject {
     
-    @Published var critterImage: Critter?
-
+//    @Published var critterImage: Critter?
+    
+    var critterPhotos: [String] = []
+    
     func addCritter(name: String) {
+        
         // 1. Get the URL of our JSON file
         let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("critters.json")
         
@@ -27,8 +30,11 @@ class AddCritterViewModel: ObservableObject {
         }
         
         // 3. Create a new critter object with the given data and add it to the array
-        let newCritter = Critter(name: name, url: "")
+        var newCritter = Critter(name: name)
+        newCritter.imageUrls.append(contentsOf: critterPhotos)
         critters.append(newCritter)
+        
+        print("\(newCritter.imageUrls.count) is the urls count")
         
         // 4. Save the updated array back to the JSON file
         do {
@@ -37,26 +43,62 @@ class AddCritterViewModel: ObservableObject {
         } catch {
             print("Error writing JSON file: \(error)")
         }
-        
-        print("\(critters.count) is the count")
     }
     
-    func fetchCritterImage() {
-            guard let url = URL(string: "https://api.thecatapi.com/v1/images/search") else {
+    func fetchRandomImages(name: String) {
+        
+        var critterName = name
+    
+        // Set the API endpoint URL
+        let apiEndpoint = "https://dog.ceo/api/breeds/image/random/5"
+        
+        // Create a URL object from the API endpoint string
+        guard let url = URL(string: apiEndpoint) else {
+            print("Error: Invalid API endpoint URL")
+            return
+        }
+        
+        // Create a URL session object
+        let session = URLSession.shared
+        
+        // Create a data task to fetch the data from the API
+        let task = session.dataTask(with: url) { data, response, error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
                 return
             }
-            URLSession.shared.dataTask(with: url) { data, _, error in
-                if let data = data {
-                    let decoder = JSONDecoder()
-                    do {
-                        let critterImage = try decoder.decode([Critter].self, from: data).first
-                        DispatchQueue.main.async {
-                            self.critterImage = critterImage
-                        }
-                    } catch {
-                        print(error.localizedDescription)
-                    }
+            
+            guard let data = data else {
+                print("Error: No data received from the API")
+                return
+            }
+            
+            do {
+                // Decode the JSON response into a Swift object
+                let response = try JSONDecoder().decode(DogAPIResponse.self, from: data)
+                
+                // Update the imageUrls array with the new image URLs
+                DispatchQueue.main.async {
+//                    self.imageUrls = response.message
+//                    newCritter.imageUrls = response.message
+                    self.critterPhotos = response.message
+                    print(self.critterPhotos)
+                    
+                    self.addCritter(name: critterName)
+                    
                 }
-            }.resume()
+            } catch let error {
+                print("Error: \(error.localizedDescription)")
+            }
         }
+        
+        // Start the data task
+        task.resume()
+    }
+    
+    struct DogAPIResponse: Decodable {
+        let message: [String]
+        let status: String
+    }
+    
 }

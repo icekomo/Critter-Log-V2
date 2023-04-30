@@ -30,7 +30,7 @@ struct CritterOptionsTab: View {
                     CritterContact(critter: critter).environmentObject(critterViewModel)
                         .listRowSeparator(.hidden)
                         .listRowBackground(Constants.Colors.greenLight.color)
-                    Text("hello2")
+                    
                 }
                 .listStyle(PlainListStyle())
             }

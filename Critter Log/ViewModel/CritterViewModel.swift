@@ -10,7 +10,6 @@ import SwiftUI
 
 class CritterViewModel: ObservableObject {
     
-    @Published var critterImage: CritterImage?
     @Published var critters = [Critter]()
     
     init() {
@@ -53,6 +52,10 @@ class CritterViewModel: ObservableObject {
         }
         
         print("\(critters.count) is the count")
+        if !critters.isEmpty {
+            print("\(critters[0].imageUrls)")
+        }
+        
     }
     
     func delete(at offsets: IndexSet) {
@@ -73,33 +76,10 @@ class CritterViewModel: ObservableObject {
         }
     }
     
-    func fetchCatImage() {
-        let apiKey = "live_4Yiy8D3sx9pvMiK276lStGhlfQt01bDOB19JHnJ8jTkrcJ9AkHAbfrH152IhzfXJ"
-        let urlString = "https://api.thedogapi.com/v1/images/search?api_key=\(apiKey)"
-        guard let url = URL(string: urlString) else { return }
-        
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data = data else { return }
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            do {
-                let critterImage = try decoder.decode([CritterImage].self, from: data)
-                DispatchQueue.main.async {
-                    self.critterImage = critterImage.first
-                }
-            } catch let error {
-                print("error here")
-                print(error)
-                print(error.localizedDescription)
-            }
-        }.resume()
-    }
-    
     func updateAge(for critter: Critter, newAge: Int) {
-        
-//        print("Old age \(critter.age)")
-//        print("New age \(newAge)")
-//        print("this is the critter id \(critter.id)")
+        //        print("Old age \(critter.age)")
+        //        print("New age \(newAge)")
+        //        print("this is the critter id \(critter.id)")
         guard let index = critters.firstIndex(where: { $0.id == critter.id }) else {
             return // Critter not found in the array
         }
@@ -109,7 +89,7 @@ class CritterViewModel: ObservableObject {
     }
     
     func displayAge(for critter: Critter, showAge: Bool) {
-//        print("this is the toggle value \(showAge)")
+        //        print("this is the toggle value \(showAge)")
         guard let index = critters.firstIndex(where: { $0.id == critter.id }) else {
             return // Pet not found in the array
         }
@@ -136,7 +116,7 @@ class CritterViewModel: ObservableObject {
     }
     
     func displayEmergencyContact(for critter: Critter, showEmergencyContact: Bool) {
-//        print("this is the toggle value \(showAge)")
+        //        print("this is the toggle value \(showAge)")
         guard let index = critters.firstIndex(where: { $0.id == critter.id }) else {
             return // Pet not found in the array
         }
@@ -155,7 +135,7 @@ class CritterViewModel: ObservableObject {
         }
         
         critters[index].tasks!.append(task)
-//        print("this is the count \(critters[index].tasks!.count)")
+        //        print("this is the count \(critters[index].tasks!.count)")
         saveUpdates()
     }
     
@@ -193,4 +173,5 @@ class CritterViewModel: ObservableObject {
             fatalError("Failed to encode or write pets.json: \(error)")
         }
     }
+
 }

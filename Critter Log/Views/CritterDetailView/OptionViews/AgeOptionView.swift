@@ -60,7 +60,10 @@ struct AgeOptionView_Previews: PreviewProvider {
     
     static private  var ageOptionIsShowing = Binding.constant(false)
     
-    static private var critter = Critter(name: "bob", url: "google")
+    static private var critter = Critter(name: "bob"
+                                        // url: "something"
+//                                         urls:[URL(string: "google.com")!]
+    )
     
     static var previews: some View {
         AgeOptionView(critter: critter, ageOptionIsShowing: ageOptionIsShowing)

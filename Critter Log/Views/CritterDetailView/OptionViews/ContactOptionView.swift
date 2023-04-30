@@ -84,7 +84,10 @@ struct ContactOptionView: View {
 struct ContactOptionView_Previews: PreviewProvider {
     static private  var contactOptionIsShowing = Binding.constant(false)
     
-    static private var critter = Critter(name: "bob", url: "google")
+    static private var critter = Critter(name: "bob"
+                                         // url: "something"
+//                                         urls: [URL(string: "google.com")!]
+    )
     
     static var previews: some View {
         ContactOptionView(critter: critter, contactOptionIsShowing: contactOptionIsShowing)

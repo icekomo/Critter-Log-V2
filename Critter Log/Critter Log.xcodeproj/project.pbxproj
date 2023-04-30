@@ -23,6 +23,7 @@
 		E7347ACA29E3A483005240A1 /* Critter_LogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7347AC929E3A483005240A1 /* Critter_LogTests.swift */; };
 		E7347AD429E3A483005240A1 /* Critter_LogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7347AD329E3A483005240A1 /* Critter_LogUITests.swift */; };
 		E7347AD629E3A483005240A1 /* Critter_LogUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7347AD529E3A483005240A1 /* Critter_LogUITestsLaunchTests.swift */; };
+		E74269BC29FEDAF800338F88 /* DogImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74269BB29FEDAF800338F88 /* DogImageView.swift */; };
 		E79A97EE29E4365D0099B9A6 /* CritterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A97ED29E4365D0099B9A6 /* CritterView.swift */; };
 		E79A97F129E436950099B9A6 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A97F029E436950099B9A6 /* FileManager.swift */; };
 		E79A97F329E43E240099B9A6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A97F229E43E240099B9A6 /* Constants.swift */; };
@@ -71,6 +72,7 @@
 		E7347ACF29E3A483005240A1 /* Critter LogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Critter LogUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7347AD329E3A483005240A1 /* Critter_LogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Critter_LogUITests.swift; sourceTree = "<group>"; };
 		E7347AD529E3A483005240A1 /* Critter_LogUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Critter_LogUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E74269BB29FEDAF800338F88 /* DogImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogImageView.swift; sourceTree = "<group>"; };
 		E79A97ED29E4365D0099B9A6 /* CritterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterView.swift; sourceTree = "<group>"; };
 		E79A97F029E436950099B9A6 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		E79A97F229E43E240099B9A6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -197,9 +199,18 @@
 			path = "Critter LogUITests";
 			sourceTree = "<group>";
 		};
+		E74269BA29FEDAE800338F88 /* DogImageView */ = {
+			isa = PBXGroup;
+			children = (
+				E74269BB29FEDAF800338F88 /* DogImageView.swift */,
+			);
+			path = DogImageView;
+			sourceTree = "<group>";
+		};
 		E79A97E929E431440099B9A6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E74269BA29FEDAE800338F88 /* DogImageView */,
 				E731DCAD29F01C5B00F15C3A /* CritterDetailView */,
 				E731DCAA29EE1E0800F15C3A /* AddCritter */,
 				E79A97EC29E436490099B9A6 /* CritterView */,
@@ -418,6 +429,7 @@
 				E7F7254229F858E60084318F /* ContactOptionView.swift in Sources */,
 				E79A97F929E45A050099B9A6 /* CritterData.swift in Sources */,
 				E731DCB829F042BF00F15C3A /* AgeOptionView.swift in Sources */,
+				E74269BC29FEDAF800338F88 /* DogImageView.swift in Sources */,
 				E731DCAF29F01F4500F15C3A /* CritterDetailsView.swift in Sources */,
 				E79A97EE29E4365D0099B9A6 /* CritterView.swift in Sources */,
 				E79A97F729E459C90099B9A6 /* Critter.swift in Sources */,

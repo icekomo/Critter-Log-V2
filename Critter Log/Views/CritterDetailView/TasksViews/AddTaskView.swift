@@ -58,7 +58,10 @@ struct AddTaskView: View {
 struct AddTaskView_Previews: PreviewProvider {
     static private  var addTaskIsShowing = Binding.constant(false)
     
-    static private var critter = Critter(name: "bob", url: "google")
+    static private var critter = Critter(name: "bob"
+                                        // url: "something"
+//                                         urls: [URL(string: "https://www.google.com/")!]
+    )
     
     static var previews: some View {
         AddTaskView(critter: critter, addTaskIsShowing: addTaskIsShowing)

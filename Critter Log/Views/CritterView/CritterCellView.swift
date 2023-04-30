@@ -28,6 +28,7 @@ struct CritterCellView: View {
             Text("\(critter.name)")
                 .font(.headline)
             Spacer()
+        
             Image(systemName: "chevron.forward")
                 .padding()
                 .padding(.vertical, 15)

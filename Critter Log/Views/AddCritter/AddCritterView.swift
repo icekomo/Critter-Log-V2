@@ -32,13 +32,15 @@ struct AddCritterView: View {
                     .onTapGesture {
                         name = ""
                     }
+                    .accessibility(identifier: "addCritterTextField")
                 
                 Button("Add Critter") {
                     
                     if name.isEmpty || name == "Please add a name" {
                         name = "Please add a name"
                     } else {
-                        addCritterViewModel.addCritter(name: name)
+//                        addCritterViewModel.addCritter(name: name)
+                        addCritterViewModel.fetchRandomImages(name: name)
                         print(critterViewModel.critters.count)
                         // add random image to critter
                         name = ""
