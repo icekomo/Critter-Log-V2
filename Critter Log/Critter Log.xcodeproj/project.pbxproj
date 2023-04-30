@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E731DC9029E5F1F600F15C3A /* CritterCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E731DC8F29E5F1F600F15C3A /* CritterCellView.swift */; };
 		E731DCA329ECC5FE00F15C3A /* CritterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E731DCA229ECC5FE00F15C3A /* CritterViewModel.swift */; };
-		E731DCA529ECC69D00F15C3A /* CritterImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E731DCA429ECC69D00F15C3A /* CritterImage.swift */; };
 		E731DCAC29EE21B400F15C3A /* AddCritterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E731DCAB29EE21B400F15C3A /* AddCritterViewModel.swift */; };
 		E731DCAF29F01F4500F15C3A /* CritterDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E731DCAE29F01F4500F15C3A /* CritterDetailsView.swift */; };
 		E731DCB129F027F700F15C3A /* CritterTaskTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = E731DCB029F027F700F15C3A /* CritterTaskTab.swift */; };
@@ -23,7 +22,6 @@
 		E7347ACA29E3A483005240A1 /* Critter_LogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7347AC929E3A483005240A1 /* Critter_LogTests.swift */; };
 		E7347AD429E3A483005240A1 /* Critter_LogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7347AD329E3A483005240A1 /* Critter_LogUITests.swift */; };
 		E7347AD629E3A483005240A1 /* Critter_LogUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7347AD529E3A483005240A1 /* Critter_LogUITestsLaunchTests.swift */; };
-		E74269BC29FEDAF800338F88 /* DogImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74269BB29FEDAF800338F88 /* DogImageView.swift */; };
 		E79A97EE29E4365D0099B9A6 /* CritterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A97ED29E4365D0099B9A6 /* CritterView.swift */; };
 		E79A97F129E436950099B9A6 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A97F029E436950099B9A6 /* FileManager.swift */; };
 		E79A97F329E43E240099B9A6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A97F229E43E240099B9A6 /* Constants.swift */; };
@@ -55,7 +53,6 @@
 /* Begin PBXFileReference section */
 		E731DC8F29E5F1F600F15C3A /* CritterCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterCellView.swift; sourceTree = "<group>"; };
 		E731DCA229ECC5FE00F15C3A /* CritterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterViewModel.swift; sourceTree = "<group>"; };
-		E731DCA429ECC69D00F15C3A /* CritterImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterImage.swift; sourceTree = "<group>"; };
 		E731DCAB29EE21B400F15C3A /* AddCritterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCritterViewModel.swift; sourceTree = "<group>"; };
 		E731DCAE29F01F4500F15C3A /* CritterDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterDetailsView.swift; sourceTree = "<group>"; };
 		E731DCB029F027F700F15C3A /* CritterTaskTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterTaskTab.swift; sourceTree = "<group>"; };
@@ -72,7 +69,6 @@
 		E7347ACF29E3A483005240A1 /* Critter LogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Critter LogUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7347AD329E3A483005240A1 /* Critter_LogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Critter_LogUITests.swift; sourceTree = "<group>"; };
 		E7347AD529E3A483005240A1 /* Critter_LogUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Critter_LogUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		E74269BB29FEDAF800338F88 /* DogImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogImageView.swift; sourceTree = "<group>"; };
 		E79A97ED29E4365D0099B9A6 /* CritterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterView.swift; sourceTree = "<group>"; };
 		E79A97F029E436950099B9A6 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		E79A97F229E43E240099B9A6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -199,18 +195,9 @@
 			path = "Critter LogUITests";
 			sourceTree = "<group>";
 		};
-		E74269BA29FEDAE800338F88 /* DogImageView */ = {
-			isa = PBXGroup;
-			children = (
-				E74269BB29FEDAF800338F88 /* DogImageView.swift */,
-			);
-			path = DogImageView;
-			sourceTree = "<group>";
-		};
 		E79A97E929E431440099B9A6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E74269BA29FEDAE800338F88 /* DogImageView */,
 				E731DCAD29F01C5B00F15C3A /* CritterDetailView */,
 				E731DCAA29EE1E0800F15C3A /* AddCritter */,
 				E79A97EC29E436490099B9A6 /* CritterView */,
@@ -224,7 +211,6 @@
 				E79A97F229E43E240099B9A6 /* Constants.swift */,
 				E79A97F629E459C90099B9A6 /* Critter.swift */,
 				E79A97F829E45A050099B9A6 /* CritterData.swift */,
-				E731DCA429ECC69D00F15C3A /* CritterImage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -417,7 +403,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E79A97FD29E57F8B0099B9A6 /* AddCritterView.swift in Sources */,
-				E731DCA529ECC69D00F15C3A /* CritterImage.swift in Sources */,
 				E79A97F529E448730099B9A6 /* CritterViewHeader.swift in Sources */,
 				E731DC9029E5F1F600F15C3A /* CritterCellView.swift in Sources */,
 				E7E8058A29F56706009C43A2 /* AddTaskView.swift in Sources */,
@@ -429,7 +414,6 @@
 				E7F7254229F858E60084318F /* ContactOptionView.swift in Sources */,
 				E79A97F929E45A050099B9A6 /* CritterData.swift in Sources */,
 				E731DCB829F042BF00F15C3A /* AgeOptionView.swift in Sources */,
-				E74269BC29FEDAF800338F88 /* DogImageView.swift in Sources */,
 				E731DCAF29F01F4500F15C3A /* CritterDetailsView.swift in Sources */,
 				E79A97EE29E4365D0099B9A6 /* CritterView.swift in Sources */,
 				E79A97F729E459C90099B9A6 /* Critter.swift in Sources */,

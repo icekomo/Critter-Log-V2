@@ -12,8 +12,9 @@ struct CritterCellView: View {
     
     var body: some View {
         HStack {
-            Image("TestDog")
-                .resizable()
+//            Image("TestDog")
+            AsyncImage(url: URL(string: critter.imageUrls[0]))
+//                .resizable()
                 .scaledToFill()
                 .frame(width: 50, height: 50)
                 .background(Color("GreenDark"))
@@ -28,7 +29,7 @@ struct CritterCellView: View {
             Text("\(critter.name)")
                 .font(.headline)
             Spacer()
-        
+            
             Image(systemName: "chevron.forward")
                 .padding()
                 .padding(.vertical, 15)

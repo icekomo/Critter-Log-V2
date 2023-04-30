@@ -20,7 +20,6 @@ struct CritterView: View {
             ZStack(alignment: .bottomTrailing) {
                 VStack {
 //                CritterViewHeader().environmentObject(critterViewModel)
-                    
                     Spacer()
                     
                     if critterViewModel.critters.isEmpty {
