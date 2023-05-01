@@ -12,7 +12,7 @@ class CritterViewModel: ObservableObject {
     
     @Published var critters = [Critter]()
     
-    @Published var critterImage: CritterImage?
+//    @Published var critterImage: CritterImage?
     
     init() {
         print("critter data init")

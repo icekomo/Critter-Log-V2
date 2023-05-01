@@ -11,7 +11,6 @@ struct CritterView: View {
     
     @EnvironmentObject var critterViewModel: CritterViewModel
     @State var addCritterIsShowing = false
-    
     var addCritterViewModel = AddCritterViewModel()
 
     var body: some View {
@@ -19,9 +18,7 @@ struct CritterView: View {
         NavigationStack {
             ZStack(alignment: .bottomTrailing) {
                 VStack {
-//                CritterViewHeader().environmentObject(critterViewModel)
                     Spacer()
-                    
                     if critterViewModel.critters.isEmpty {
                         
                         Image("Welcome-logo")
@@ -62,13 +59,10 @@ struct CritterView: View {
                             .listStyle(PlainListStyle())
                         }
                     }
-                    
                     Spacer()
-                    
                 }
                 .background(Constants.Colors.greenLight.color)
                 .navigationTitle("Critter Log")
-//                .navigationBarTitleDisplayMode(.inline)
                 .toolbarBackground(Color.white, for: .navigationBar)
                 .toolbarBackground(.visible, for: .navigationBar)
                 .onAppear {

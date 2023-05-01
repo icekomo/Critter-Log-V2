@@ -16,7 +16,6 @@ struct CritterDetailTab: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                
                 ScrollView {
                     
                     VStack {
@@ -27,27 +26,16 @@ struct CritterDetailTab: View {
                             if critter.showAge == false {
                                 AgeView(critter: critter).hidden()
                             } else {
-//                                Text("Width: \(geometry.size.width)")
-//                                Text("Height: \(geometry.size.height)")
                                 AgeView(critter: critter)
-//                                    .position(x: geomerty.size.width / 2)
                             }
                             
                             if critter.showContact == false {
                                 ContactView(critter: critter).hidden()
                             } else {
                                 ContactView(critter: critter)
-//                                    .position(x: geomerty.size.width / 2)
                             }
                             
                         }
-//                        VStack {
-//                            if critter.showEmergencyContact == false {
-//                                EmergencyContactView(critter: critter).hidden()
-//                            } else {
-//                                EmergencyContactView(critter: critter)
-//                            }
-//                        }
                         
                         Spacer()
                     }
@@ -67,8 +55,28 @@ struct CritterDetailTab_Previews: PreviewProvider {
 struct ImageView: View {
     let critter: Critter
     var body: some View {
-        Image("TestDog")
-            .resizable()
+        ZStack{
+            
+            AsyncImage(url: URL(string: critter.imageUrls[0])) { phase in
+                switch phase {
+                case .empty:
+                    ProgressView()
+                case .success(let image):
+                    image.resizable()
+                        .aspectRatio(contentMode: .fit)
+                    //                    .frame(maxWidth: 300, maxHeight: 100)
+                case .failure:
+                    Image(systemName: "photo")
+                @unknown default:
+                    // Since the AsyncImagePhase enum isn't frozen,
+                    // we need to add this currently unused fallback
+                    // to handle any new cases that might be added
+                    // in the future:
+                    EmptyView()
+                }
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: 250)
     }
 }
 

@@ -47,8 +47,6 @@ class AddCritterViewModel: ObservableObject {
     
     func fetchRandomImages(name: String) {
         
-        var critterName = name
-    
         // Set the API endpoint URL
         let apiEndpoint = "https://dog.ceo/api/breeds/image/random/5"
         
@@ -79,12 +77,10 @@ class AddCritterViewModel: ObservableObject {
                 
                 // Update the imageUrls array with the new image URLs
                 DispatchQueue.main.async {
-//                    self.imageUrls = response.message
-//                    newCritter.imageUrls = response.message
                     self.critterPhotos = response.message
                     print(self.critterPhotos)
                     
-                    self.addCritter(name: critterName)
+                    self.addCritter(name: name)
                     
                 }
             } catch let error {
