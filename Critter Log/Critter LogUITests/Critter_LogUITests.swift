@@ -9,7 +9,6 @@ import XCTest
 
 final class Critter_LogUITests: XCTestCase {
 
-    
     /* -------------------
        Add Critter View Test
      --------------------- */

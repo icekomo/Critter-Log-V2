@@ -17,7 +17,7 @@ struct AddCritterView: View {
     
     var body: some View {
         ZStack {
-            Color(.white)
+            Constants.Colors.charcoal.color
                 .ignoresSafeArea()
             VStack {
                 Text("Add Critter")
@@ -32,6 +32,7 @@ struct AddCritterView: View {
                     .onTapGesture {
                         name = ""
                     }
+//                    .ignoresSafeArea(.keyboard, edges: .bottom)
                     .accessibility(identifier: "addCritterTextField")
                 
                 Button("Add Critter") {

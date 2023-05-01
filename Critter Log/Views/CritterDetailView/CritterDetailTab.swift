@@ -55,7 +55,7 @@ struct CritterDetailTab_Previews: PreviewProvider {
 struct ImageView: View {
     let critter: Critter
     var body: some View {
-        ZStack{
+        ZStack {
             
             AsyncImage(url: URL(string: critter.imageUrls[0])) { phase in
                 switch phase {
