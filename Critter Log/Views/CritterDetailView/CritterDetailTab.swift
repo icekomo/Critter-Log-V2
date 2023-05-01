@@ -14,7 +14,7 @@ struct CritterDetailTab: View {
     let columns = [GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
-        GeometryReader { geometry in
+//        GeometryReader { geometry in
             ZStack {
                 ScrollView {
                     
@@ -34,7 +34,6 @@ struct CritterDetailTab: View {
                             } else {
                                 ContactView(critter: critter)
                             }
-                            
                         }
                         
                         Spacer()
@@ -42,7 +41,7 @@ struct CritterDetailTab: View {
                 }
             }
             .background(Constants.Colors.greenLight.color)
-        }
+//        }
     }
 }
 
@@ -56,14 +55,13 @@ struct ImageView: View {
     let critter: Critter
     var body: some View {
         ZStack {
-            
             AsyncImage(url: URL(string: critter.imageUrls[0])) { phase in
                 switch phase {
                 case .empty:
                     ProgressView()
                 case .success(let image):
                     image.resizable()
-                        .aspectRatio(contentMode: .fit)
+                        .aspectRatio(contentMode: .fill)
                     //                    .frame(maxWidth: 300, maxHeight: 100)
                 case .failure:
                     Image(systemName: "photo")
