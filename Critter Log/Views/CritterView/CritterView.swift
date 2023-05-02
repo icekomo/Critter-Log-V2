@@ -20,13 +20,11 @@ struct CritterView: View {
                 VStack {
                     Spacer()
                     if critterViewModel.critters.isEmpty {
-                        
                         Image("Welcome-logo")
                             .resizable()
                             .scaledToFit()
                             .padding(50.0)
                     } else {
-                        
                         VStack(spacing: 0) {
                             HStack {
                                 Text("Critters")
@@ -104,8 +102,7 @@ struct CritterView: View {
 
 struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
-        let critterViewModel = CritterViewModel()
         CritterView()
-            .environmentObject(critterViewModel)
+            .environmentObject(CritterViewModel())
     }
 }

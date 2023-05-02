@@ -79,7 +79,6 @@ class AddCritterViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     self.critterPhotos = response.message
                     print(self.critterPhotos)
-                    
                     self.addCritter(name: name)
                     
                 }

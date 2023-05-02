@@ -12,26 +12,32 @@ class CritterViewModel: ObservableObject {
     
     @Published var critters = [Critter]()
     
-//    @Published var critterImage: CritterImage?
-    
     init() {
         print("critter data init")
     }
     
+    func checkCritterArray() {
+//        ForEach(critters, id: \.name) { critter in
+        print(critters.count)
+//        }
+    }
+    
     // Step 1 : Load the data
     func loadCritters() {
-//        print("load critters")
+        print("try to load critters")
         if let fileUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("critters.json") {
             do {
-                print(fileUrl)
+                // this is the file path
+//                print(fileUrl)
                 let data = try Data(contentsOf: fileUrl)
                 let decoder = JSONDecoder()
                 self.critters = try decoder.decode([Critter].self, from: data)
             } catch {
                 print("Error loading data: \(error)")
+                createNewFile()
             }
         } else {
-//            print("File not found.")
+            print("File not found.")
             // if there id no file, create one
             createNewFile()
         }

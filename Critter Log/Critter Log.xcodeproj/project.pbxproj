@@ -25,7 +25,6 @@
 		E79A97EE29E4365D0099B9A6 /* CritterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A97ED29E4365D0099B9A6 /* CritterView.swift */; };
 		E79A97F129E436950099B9A6 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A97F029E436950099B9A6 /* FileManager.swift */; };
 		E79A97F329E43E240099B9A6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A97F229E43E240099B9A6 /* Constants.swift */; };
-		E79A97F529E448730099B9A6 /* CritterViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A97F429E448730099B9A6 /* CritterViewHeader.swift */; };
 		E79A97F729E459C90099B9A6 /* Critter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A97F629E459C90099B9A6 /* Critter.swift */; };
 		E79A97FD29E57F8B0099B9A6 /* AddCritterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A97FC29E57F8B0099B9A6 /* AddCritterView.swift */; };
 		E7A9FF052A008F4A000067A7 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A9FF042A008F4A000067A7 /* LaunchScreenView.swift */; };
@@ -73,7 +72,6 @@
 		E79A97ED29E4365D0099B9A6 /* CritterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterView.swift; sourceTree = "<group>"; };
 		E79A97F029E436950099B9A6 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		E79A97F229E43E240099B9A6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		E79A97F429E448730099B9A6 /* CritterViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterViewHeader.swift; sourceTree = "<group>"; };
 		E79A97F629E459C90099B9A6 /* Critter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Critter.swift; sourceTree = "<group>"; };
 		E79A97FC29E57F8B0099B9A6 /* AddCritterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCritterView.swift; sourceTree = "<group>"; };
 		E7A9FF022A008CAE000067A7 /* Critter-Log-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Critter-Log-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -232,7 +230,6 @@
 			isa = PBXGroup;
 			children = (
 				E79A97ED29E4365D0099B9A6 /* CritterView.swift */,
-				E79A97F429E448730099B9A6 /* CritterViewHeader.swift */,
 				E731DC8F29E5F1F600F15C3A /* CritterCellView.swift */,
 			);
 			path = CritterView;
@@ -416,7 +413,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E79A97FD29E57F8B0099B9A6 /* AddCritterView.swift in Sources */,
-				E79A97F529E448730099B9A6 /* CritterViewHeader.swift in Sources */,
 				E731DC9029E5F1F600F15C3A /* CritterCellView.swift in Sources */,
 				E7E8058A29F56706009C43A2 /* AddTaskView.swift in Sources */,
 				E731DCA329ECC5FE00F15C3A /* CritterViewModel.swift in Sources */,

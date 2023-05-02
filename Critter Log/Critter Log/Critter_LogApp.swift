@@ -15,6 +15,7 @@ struct Critter_LogApp: App {
         WindowGroup {
             ZStack {
                 ContentView()
+                
                 if launchScreenManager.state != .completed {
                     LaunchScreenView()
                 }
