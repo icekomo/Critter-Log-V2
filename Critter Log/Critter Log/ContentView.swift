@@ -9,7 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var launchScreenManger: LaunchScreenManager
-    let critterViewModel = CritterViewModel()
+    
+    @StateObject var critterViewModel = CritterViewModel()
+    
     var body: some View {
 
             NavigationStack {
@@ -19,7 +21,8 @@ struct ContentView: View {
                     
                     VStack(spacing: 0.0) {
                         
-                        CritterView().environmentObject(critterViewModel)
+                        CritterView()
+                            .environmentObject(critterViewModel)
                     }
                     .background(Constants.Colors.greenLight.color)
                 }
@@ -37,6 +40,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(CritterViewModel())
             .environmentObject(LaunchScreenManager())
     }
 }

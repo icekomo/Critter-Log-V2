@@ -9,9 +9,9 @@ import SwiftUI
 
 struct AddCritterView: View {
     
-    var addCritterViewModel: AddCritterViewModel
-    
+    @EnvironmentObject var addCritterViewModel: AddCritterViewModel
     @EnvironmentObject var critterViewModel: CritterViewModel
+    
     @State private var name = ""
     @Binding var addCritterIsShowing: Bool
     
@@ -32,7 +32,6 @@ struct AddCritterView: View {
                     .onTapGesture {
                         name = ""
                     }
-//                    .ignoresSafeArea(.keyboard, edges: .bottom)
                     .accessibility(identifier: "addCritterTextField")
                 
                 Button("Add Critter") {
@@ -42,10 +41,9 @@ struct AddCritterView: View {
                     } else {
 //                        addCritterViewModel.addCritter(name: name)
                         addCritterViewModel.fetchRandomImages(name: name)
-                        print(critterViewModel.critters.count)
-                        // add random image to critter
+//                        print(critterViewModel.critters.count)
                         name = ""
-                        critterViewModel.loadCritters()
+//                        critterViewModel.loadCritters()
                         addCritterIsShowing.toggle()
                     }
                 }
@@ -66,6 +64,7 @@ struct AddCritterView_Previews: PreviewProvider {
     static private var addCritterViewModel = AddCritterViewModel()
     
     static var previews: some View {
-        AddCritterView(addCritterViewModel: addCritterViewModel, addCritterIsShowing: addCritterIsShowing)
+        AddCritterView(addCritterIsShowing: addCritterIsShowing)
+            .environmentObject(AddCritterViewModel())
     }
 }

@@ -11,7 +11,7 @@ struct CritterView: View {
     
     @EnvironmentObject var critterViewModel: CritterViewModel
     @State var addCritterIsShowing = false
-    var addCritterViewModel = AddCritterViewModel()
+    @StateObject var addCritterViewModel = AddCritterViewModel()
 
     var body: some View {
         
@@ -82,8 +82,9 @@ struct CritterView: View {
                     .accessibility(identifier: "addCritterButton")
                     .sheet(isPresented: $addCritterIsShowing) {
                         
-                        AddCritterView(addCritterViewModel: addCritterViewModel,
-                                       addCritterIsShowing: $addCritterIsShowing).environmentObject(critterViewModel)
+                        AddCritterView(addCritterIsShowing: $addCritterIsShowing)
+                            .environmentObject(critterViewModel)
+                            .environmentObject(addCritterViewModel)
                             .presentationDetents([.height(200)])
                             .presentationBackground(.ultraThinMaterial)
                     }

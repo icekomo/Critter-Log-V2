@@ -9,9 +9,11 @@ import Foundation
 
 class AddCritterViewModel: ObservableObject {
     
-//    @Published var critterImage: Critter?
-    
     var critterPhotos: [String] = []
+    
+    init() {
+        print("Add Critter")
+    }
     
     func addCritter(name: String) {
         
@@ -21,7 +23,7 @@ class AddCritterViewModel: ObservableObject {
         // 2. Load the existing pets from the JSON file, or create an empty array if the file doesn't exist yet
         var critters = [Critter]()
         if let data = try? Data(contentsOf: url) {
-//            print("There is a file already!")
+            print("There is a file already!")
             do {
                 critters = try JSONDecoder().decode([Critter].self, from: data)
             } catch {
@@ -34,7 +36,7 @@ class AddCritterViewModel: ObservableObject {
         newCritter.imageUrls.append(contentsOf: critterPhotos)
         critters.append(newCritter)
         
-        print("\(newCritter.imageUrls.count) is the urls count")
+//        print("\(newCritter.imageUrls.count) is the urls count")
         
         // 4. Save the updated array back to the JSON file
         do {
@@ -78,7 +80,7 @@ class AddCritterViewModel: ObservableObject {
                 // Update the imageUrls array with the new image URLs
                 DispatchQueue.main.async {
                     self.critterPhotos = response.message
-                    print(self.critterPhotos)
+                    // print(self.critterPhotos)
                     self.addCritter(name: name)
                     
                 }
