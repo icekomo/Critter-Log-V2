@@ -29,6 +29,8 @@
 		E79A97F729E459C90099B9A6 /* Critter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A97F629E459C90099B9A6 /* Critter.swift */; };
 		E79A97F929E45A050099B9A6 /* CritterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A97F829E45A050099B9A6 /* CritterData.swift */; };
 		E79A97FD29E57F8B0099B9A6 /* AddCritterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A97FC29E57F8B0099B9A6 /* AddCritterView.swift */; };
+		E7A9FF052A008F4A000067A7 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A9FF042A008F4A000067A7 /* LaunchScreenView.swift */; };
+		E7A9FF072A0093B1000067A7 /* LaunchScreenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A9FF062A0093B1000067A7 /* LaunchScreenManager.swift */; };
 		E7E8058A29F56706009C43A2 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E8058929F56706009C43A2 /* AddTaskView.swift */; };
 		E7F7254229F858E60084318F /* ContactOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F7254129F858E60084318F /* ContactOptionView.swift */; };
 /* End PBXBuildFile section */
@@ -76,6 +78,9 @@
 		E79A97F629E459C90099B9A6 /* Critter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Critter.swift; sourceTree = "<group>"; };
 		E79A97F829E45A050099B9A6 /* CritterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterData.swift; sourceTree = "<group>"; };
 		E79A97FC29E57F8B0099B9A6 /* AddCritterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCritterView.swift; sourceTree = "<group>"; };
+		E7A9FF022A008CAE000067A7 /* Critter-Log-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Critter-Log-Info.plist"; sourceTree = SOURCE_ROOT; };
+		E7A9FF042A008F4A000067A7 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
+		E7A9FF062A0093B1000067A7 /* LaunchScreenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenManager.swift; sourceTree = "<group>"; };
 		E7E8058929F56706009C43A2 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
 		E7F7254129F858E60084318F /* ContactOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactOptionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,6 +167,7 @@
 		E7347AB729E3A483005240A1 /* Critter Log */ = {
 			isa = PBXGroup;
 			children = (
+				E7A9FF022A008CAE000067A7 /* Critter-Log-Info.plist */,
 				E7347AB829E3A483005240A1 /* Critter_LogApp.swift */,
 				E7347ABA29E3A483005240A1 /* ContentView.swift */,
 				E7347ABC29E3A483005240A1 /* Assets.xcassets */,
@@ -198,6 +204,7 @@
 		E79A97E929E431440099B9A6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E7A9FF032A008F2D000067A7 /* LaunchScreen */,
 				E731DCAD29F01C5B00F15C3A /* CritterDetailView */,
 				E731DCAA29EE1E0800F15C3A /* AddCritter */,
 				E79A97EC29E436490099B9A6 /* CritterView */,
@@ -240,6 +247,15 @@
 				E79A97F029E436950099B9A6 /* FileManager.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E7A9FF032A008F2D000067A7 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E7A9FF042A008F4A000067A7 /* LaunchScreenView.swift */,
+				E7A9FF062A0093B1000067A7 /* LaunchScreenManager.swift */,
+			);
+			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
 		E7E8058829F566E5009C43A2 /* TasksViews */ = {
@@ -417,6 +433,8 @@
 				E731DCAF29F01F4500F15C3A /* CritterDetailsView.swift in Sources */,
 				E79A97EE29E4365D0099B9A6 /* CritterView.swift in Sources */,
 				E79A97F729E459C90099B9A6 /* Critter.swift in Sources */,
+				E7A9FF052A008F4A000067A7 /* LaunchScreenView.swift in Sources */,
+				E7A9FF072A0093B1000067A7 /* LaunchScreenManager.swift in Sources */,
 				E731DCB529F0289600F15C3A /* CritterDetailTab.swift in Sources */,
 				E7347AB929E3A483005240A1 /* Critter_LogApp.swift in Sources */,
 				E79A97F129E436950099B9A6 /* FileManager.swift in Sources */,
@@ -582,9 +600,9 @@
 				DEVELOPMENT_TEAM = 4PUEC845K7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Critter-Log-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -611,9 +629,9 @@
 				DEVELOPMENT_TEAM = 4PUEC845K7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Critter-Log-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

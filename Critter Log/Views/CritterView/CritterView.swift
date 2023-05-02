@@ -99,7 +99,6 @@ struct CritterView: View {
             }
             .tint(Color.black)
         }
-        
     }
 }
 
