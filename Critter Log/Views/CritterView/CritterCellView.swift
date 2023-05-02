@@ -14,10 +14,8 @@ struct CritterCellView: View {
         HStack {
 //            Image("TestDog")
             AsyncImage(url: URL(string: critter.imageUrls[0]))
-//                .resizable()
                 .scaledToFill()
                 .frame(width: 50, height: 50)
-                .background(Color("GreenDark"))
                 .cornerRadius(50)
                 .overlay(
                     RoundedRectangle(cornerRadius: 50)

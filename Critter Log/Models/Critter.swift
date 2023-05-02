@@ -13,7 +13,6 @@ struct Critter: Identifiable, Codable {
     let id = UUID()
     var name: String
     var imageUrls: [String] = []
-//    var urls: [URL] = []
     var age: Int?
     var showAge: Bool = true
     var tasks: [String]?
@@ -25,7 +24,6 @@ struct Critter: Identifiable, Codable {
     
 static let exampleCritterData = [Critter(name: "Ziggy",
                                          imageUrls: ["somethng"],
-//                                         urls: [URL(string: "https://www.google.com/")!],
                                          age: 6, tasks: nil,
                                          contactName: "Mr. Grumpy",
                                          contactPhone: "215-888-9000",

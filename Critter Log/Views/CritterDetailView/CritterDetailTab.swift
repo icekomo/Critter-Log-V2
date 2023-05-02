@@ -74,6 +74,7 @@ struct ImageView: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: 250)
+        .clipped()
     }
 }
 

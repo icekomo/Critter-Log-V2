@@ -13,7 +13,7 @@ struct Critter_LogApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ZStack{
+            ZStack {
                 ContentView()
                 if launchScreenManager.state != .completed {
                     LaunchScreenView()

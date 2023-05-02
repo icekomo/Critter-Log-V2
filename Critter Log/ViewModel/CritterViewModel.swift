@@ -20,7 +20,7 @@ class CritterViewModel: ObservableObject {
     
     // Step 1 : Load the data
     func loadCritters() {
-        print("load critters")
+//        print("load critters")
         if let fileUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("critters.json") {
             do {
                 print(fileUrl)
@@ -31,7 +31,8 @@ class CritterViewModel: ObservableObject {
                 print("Error loading data: \(error)")
             }
         } else {
-            print("File not found.")
+//            print("File not found.")
+            // if there id no file, create one
             createNewFile()
         }
     }
