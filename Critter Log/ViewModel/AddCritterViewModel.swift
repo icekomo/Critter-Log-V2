@@ -20,7 +20,7 @@ class AddCritterViewModel: ObservableObject {
         // 1. Get the URL of our JSON file
         let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("critters.json")
         
-        // 2. Load the existing pets from the JSON file, or create an empty array if the file doesn't exist yet
+        // 2. Load the existing critters from the JSON file, or create an empty array if the file doesn't exist yet
         var critters = [Critter]()
         if let data = try? Data(contentsOf: url) {
             print("There is a file already!")

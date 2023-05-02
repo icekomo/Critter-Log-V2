@@ -16,19 +16,13 @@ class CritterViewModel: ObservableObject {
         print("critter data init")
     }
     
-    func checkCritterArray() {
-//        ForEach(critters, id: \.name) { critter in
-        print(critters.count)
-//        }
-    }
-    
     // Step 1 : Load the data
     func loadCritters() {
         print("try to load critters")
         if let fileUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("critters.json") {
             do {
                 // this is the file path
-//                print(fileUrl)
+                print(fileUrl)
                 let data = try Data(contentsOf: fileUrl)
                 let decoder = JSONDecoder()
                 self.critters = try decoder.decode([Critter].self, from: data)

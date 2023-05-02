@@ -39,12 +39,10 @@ struct AddCritterView: View {
                     if name.isEmpty || name == "Please add a name" {
                         name = "Please add a name"
                     } else {
-//                        addCritterViewModel.addCritter(name: name)
                         addCritterViewModel.fetchRandomImages(name: name)
-//                        print(critterViewModel.critters.count)
                         name = ""
-//                        critterViewModel.loadCritters()
                         addCritterIsShowing.toggle()
+                        critterViewModel.loadCritters()
                     }
                 }
                 .padding()

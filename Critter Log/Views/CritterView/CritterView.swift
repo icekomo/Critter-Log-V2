@@ -10,8 +10,8 @@ import SwiftUI
 struct CritterView: View {
     
     @StateObject var addCritterViewModel = AddCritterViewModel()
-    
     @EnvironmentObject var critterViewModel: CritterViewModel
+    
     @State var addCritterIsShowing = false
     
     var body: some View {
@@ -67,7 +67,7 @@ struct CritterView: View {
                 .onAppear {
                     critterViewModel.loadCritters()
                 }
-                
+
                 HStack {
                     Button {
                         addCritterIsShowing = true
