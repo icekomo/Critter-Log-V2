@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     @EnvironmentObject var launchScreenManger: LaunchScreenManager
     
     @StateObject var critterViewModel = CritterViewModel()

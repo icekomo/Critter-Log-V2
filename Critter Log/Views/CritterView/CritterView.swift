@@ -9,10 +9,11 @@ import SwiftUI
 
 struct CritterView: View {
     
+    @StateObject var addCritterViewModel = AddCritterViewModel()
+    
     @EnvironmentObject var critterViewModel: CritterViewModel
     @State var addCritterIsShowing = false
-    @StateObject var addCritterViewModel = AddCritterViewModel()
-
+    
     var body: some View {
         
         NavigationStack {
