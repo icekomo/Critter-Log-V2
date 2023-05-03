@@ -10,7 +10,7 @@ import Foundation
 class AddCritterViewModel: ObservableObject {
     
     var critterPhotos: [String] = []
-    
+
     init() {
         print("Add Critter")
     }

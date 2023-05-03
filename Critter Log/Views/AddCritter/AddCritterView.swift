@@ -42,7 +42,7 @@ struct AddCritterView: View {
                         addCritterViewModel.fetchRandomImages(name: name)
                         name = ""
                         addCritterIsShowing.toggle()
-                        critterViewModel.loadCritters()
+//                        critterViewModel.loadCritters()
                     }
                 }
                 .padding()

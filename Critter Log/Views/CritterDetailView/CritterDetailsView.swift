@@ -21,7 +21,7 @@ struct CritterDetailsView: View {
             Group {
                 CritterDetailTab(critter: critter).environmentObject(critterViewModel)
                     .tabItem {
-                        Image(systemName: "1.circle")
+                        Image("CritterIcon")
                         Text("Critter")
                     }
                     .tag(1)
@@ -36,7 +36,7 @@ struct CritterDetailsView: View {
                 
                 CritterOptionsTab(critter: critter).environmentObject(critterViewModel)
                     .tabItem {
-                        Image(systemName: "option")
+                        Image(systemName: "slider.horizontal.3")
                         Text("Options")
                     }
                     .tag(3)
