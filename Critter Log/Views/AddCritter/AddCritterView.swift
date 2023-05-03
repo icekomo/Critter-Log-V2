@@ -15,6 +15,8 @@ struct AddCritterView: View {
     @State private var name = ""
     @Binding var addCritterIsShowing: Bool
     
+    @State private var hasTimeElasped = false
+    
     var body: some View {
         ZStack {
             Constants.Colors.charcoal.color
@@ -41,8 +43,11 @@ struct AddCritterView: View {
                     } else {
                         addCritterViewModel.fetchRandomImages(name: name)
                         name = ""
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+                            critterViewModel.loadCritters()
+                        }
                         addCritterIsShowing.toggle()
-//                        critterViewModel.loadCritters()
                     }
                 }
                 .padding()
