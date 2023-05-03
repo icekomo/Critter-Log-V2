@@ -8,9 +8,9 @@
 import XCTest
 
 final class Critter_LogUITests: XCTestCase {
-
+    
     /* -------------------
-       Add Critter View Test
+     Add Critter View Test
      --------------------- */
     class Test_whenAddCritterIsPresented: XCTestCase {
         
@@ -21,19 +21,32 @@ final class Critter_LogUITests: XCTestCase {
             app.launch()
             let critterListButton = app.buttons["addCritterButton"]
             critterListButton.tap()
-
-            // In UI tests it is usually best to stop immediately when a failure occurs.
+            
             continueAfterFailure = false
         }
         
         func test_isListScreenDisplayed() {
-
+            
             let critterListNavBarTitle = app.staticTexts["Add Critter"]
             XCTAssert(critterListNavBarTitle.waitForExistence(timeout: 0.5))
         }
-
+        
         func test_addCritterContainsTextField() {
             XCTAssertTrue(app.collectionViews["addCritterTextField"].exists)
         }
+    }
+    
+    /* -------------------
+     Load Critters View Test
+     --------------------- */
+    class Test_loadCritter: XCTestCase {
+        
+//        func testLoadCritters() throws {
+//            let viewModel = CritterViewModel()
+//            viewModel.loadCritters()
+//            
+//            // Assert that the critters array is not empty
+//            XCTAssertFalse(viewModel.critters.isEmpty)
+//        }
     }
 }

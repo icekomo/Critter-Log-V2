@@ -15,3 +15,6 @@ For this app I wanted to combine my professional knowledge as a UI Designer and 
 The Dev side:
 For this app I am using a json file that is created the first time the app runs. When the user creates a critter, the app use theDogAPI to fectch 5 random images and stores them to use for the critter profile. The goal would be to allow the user to replace the random photos with photos of their own.
 
+Saving:
+The app is creating a json file to use for each new users. After the json file is created, the app will save each critter to that json file.
+
