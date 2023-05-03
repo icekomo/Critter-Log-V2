@@ -14,34 +14,34 @@ struct CritterDetailTab: View {
     let columns = [GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
-//        GeometryReader { geometry in
-            ZStack {
-                ScrollView {
+        //        GeometryReader { geometry in
+        ZStack {
+            ScrollView {
+                
+                VStack {
                     
-                    VStack {
-                        
-                        ImageView(critter: critter)
-                        NameView(critter: critter)
-                        HStack {
-                            if critter.showAge == false {
-                                AgeView(critter: critter).hidden()
-                            } else {
-                                AgeView(critter: critter)
-                            }
-                            
-                            if critter.showContact == false {
-                                ContactView(critter: critter).hidden()
-                            } else {
-                                ContactView(critter: critter)
-                            }
+                    ImageView(critter: critter)
+                    NameView(critter: critter)
+                    HStack {
+                        if critter.showAge == false {
+                            AgeView(critter: critter).hidden()
+                        } else {
+                            AgeView(critter: critter)
                         }
                         
-                        Spacer()
+                        if critter.showContact == false {
+                            ContactView(critter: critter).hidden()
+                        } else {
+                            ContactView(critter: critter)
+                        }
                     }
+                    PhotosView(critter: critter)
+                    Spacer()
                 }
             }
-            .background(Constants.Colors.greenLight.color)
-//        }
+        }
+        .background(Constants.Colors.greenLight.color)
+        //        }
     }
 }
 
@@ -135,7 +135,7 @@ struct AgeView: View {
             }
         }
         .padding()
-//        .background(Color.white)
+        //        .background(Color.white)
     }
 }
 
@@ -197,5 +197,44 @@ struct EmergencyContactView: View {
         }
         .padding()
         .background(Color.white)
+    }
+}
+
+struct PhotosView: View {
+    
+    let critter: Critter
+    //    @Binding var isEnabled: Bool
+    
+    private let adaptiveColumns = [GridItem(.adaptive(minimum: 170))]
+    
+    var count = 0
+    
+    var body: some View {
+        LazyVGrid(columns: adaptiveColumns, spacing: 10) {
+            ForEach(critter.imageUrls.dropFirst(), id: \.self) { photoString in
+                
+//                ZStack {
+                    VStack {
+                        AsyncImage(url: URL(string: photoString), content: { image in
+                            image
+                                .resizable()
+                                .scaledToFit()
+                                .clipped()
+                        },
+                        placeholder: {
+                            ProgressView()
+                        }
+                        )
+                    }
+//                    .padding()
+                    .border(.white, width: 5)
+//                    .clipped()
+
+//                }
+//                .clipped()
+            }
+        }
+        .padding()
+        .background(Constants.Colors.green.color)
     }
 }
