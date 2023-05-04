@@ -64,17 +64,10 @@ struct CritterAge: View {
                             Text("\(String(critterAge))")
                                 .foregroundColor(Constants.Colors.charcoal.color)
                                 .fontWeight(.bold)
-//                                .frame(width: 10, height: 10)
-//                                .padding(8)
-//                                .background(Constants.Colors.charcoal.color)
-//                                .cornerRadius(30)
                         } else {
                             Text("0")
-                                .foregroundColor(.white)
-                                .frame(width: 10, height: 10)
-                                .padding(8)
-                                .background(Constants.Colors.charcoal.color)
-                                .cornerRadius(30)
+                                .foregroundColor(Constants.Colors.charcoal.color)
+                                .fontWeight(.bold)
                         }
                     }
                     

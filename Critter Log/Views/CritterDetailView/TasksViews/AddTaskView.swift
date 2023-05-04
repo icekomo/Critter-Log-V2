@@ -25,9 +25,9 @@ struct AddTaskView: View {
                 Text("Add Task")
                     .font(.title2)
                     .padding(.bottom, 0)
-                    .foregroundColor(.white)
+                    .foregroundColor(Constants.Colors.charcoal.color)
                 Text("Please add a task for \(critter.name)")
-                    .foregroundColor(.white)
+                    .foregroundColor(Constants.Colors.charcoal.color)
                 TextField("Task", text: $task)
                     .padding()
                     .background(Constants.Colors.greenLight.color)
@@ -50,7 +50,7 @@ struct AddTaskView: View {
                 .foregroundColor(.white)
             }
             .padding()
-            .background(Constants.Colors.charcoal.color)
+            .background(.white)
         }
     }
 }
