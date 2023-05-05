@@ -44,7 +44,7 @@ struct AddCritterView: View {
                         addCritterViewModel.fetchRandomImages(name: name)
                         name = ""
                         
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
                             critterViewModel.loadCritters()
                         }
                         addCritterIsShowing.toggle()
